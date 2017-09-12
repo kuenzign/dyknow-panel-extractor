@@ -39,7 +39,7 @@ namespace DPXDatabase
         /// </summary>
         /// <param name="date">The date of the exception.</param>
         /// <param name="credit">If the exception provides credit.</param>
-        /// <param name="description">The description for the excpetion.</param>
+        /// <param name="description">The description for the exception.</param>
         /// <param name="notes">The notes for the exception.</param>
         public DisplayExceptionInfo(DateTime date, bool credit, string description, string notes)
         {

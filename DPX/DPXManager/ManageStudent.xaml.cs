@@ -49,7 +49,7 @@ namespace DPXManager
         /// <param name="sectionless">Only display students who are not in a section.</param>
         public void FilterText(string searchText, bool sectionless)
         {
-            listBoxStudents.Items.Filter = delegate(object obj)
+            listBoxStudents.Items.Filter = delegate (object obj)
             {
                 Student s = (Student)obj;
                 if (s == null)
@@ -108,7 +108,7 @@ namespace DPXManager
         {
             this.FilterText(textBoxFilter.Text, checkBoxFilterNoSection.IsChecked == true);
         }
-        
+
         /// <summary>
         /// The selected student changed so the display information needs to be updated.
         /// </summary>
@@ -300,7 +300,7 @@ namespace DPXManager
 
                 // File column
                 Label file = new Label();
-                file.Content = d.Filename;
+                file.Content = d.FileName;
                 if (today)
                 {
                     file.Background = Brushes.LightBlue;

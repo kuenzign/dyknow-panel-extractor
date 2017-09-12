@@ -50,7 +50,7 @@ namespace DPXDatabase
             this.dates = dates;
             this.students = db.GetAllStudents();
             this.sections = db.GetSections();
-            
+
             // Generate the report... this will take a while
             this.studentReport = new List<StudentReport>();
             for (int i = 0; i < this.students.Count; i++)

@@ -173,14 +173,17 @@ namespace DPXAnswers
                     this.ButtonGradeCorrect.IsEnabled = false;
                     this.ButtonGradeIncorrect.IsEnabled = true;
                     break;
+
                 case Grade.INCORRECT:
                     this.ButtonGradeCorrect.IsEnabled = true;
                     this.ButtonGradeIncorrect.IsEnabled = false;
                     break;
+
                 case Grade.INVALID:
                     this.ButtonGradeCorrect.IsEnabled = true;
                     this.ButtonGradeIncorrect.IsEnabled = true;
                     break;
+
                 case Grade.NOTSET:
                     this.ButtonGradeCorrect.IsEnabled = true;
                     this.ButtonGradeIncorrect.IsEnabled = true;

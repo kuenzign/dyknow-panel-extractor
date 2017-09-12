@@ -9,8 +9,8 @@ namespace UnitTests
     using System.IO;
     using System.IO.Compression;
     using DPXReader.DyKnow;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;   
-    
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
     /// This is a test class for DyKnowTest and is intended
     /// to contain all DyKnowTest Unit Tests
@@ -39,7 +39,7 @@ namespace UnitTests
                 this.testContextInstance = value;
             }
         }
-        
+
         /// <summary>
         /// Test the serialization and deserialization of a DyKnow file that only contains only some simple ink content on a single panel.
         /// </summary>
@@ -50,55 +50,55 @@ namespace UnitTests
         }
 
         /// <summary>
-        /// Test the serilization and deserilization of a DyKnow file that contains some complicated ink content.
+        /// Test the serialization and deserialization of a DyKnow file that contains some complicated ink content.
         /// </summary>
         [TestMethod()]
-        public void SerilicationTestAdvancedInking()
+        public void SerializationTestAdvancedInking()
         {
             this.PerformSerializationTest("TestAdvancedInking", "Advanced Inking");
         }
 
         /// <summary>
-        /// Test the serilization and deserilization of a DyKnow file that contains deleted ink content.
+        /// Test the serialization and deserialization of a DyKnow file that contains deleted ink content.
         /// </summary>
         [TestMethod()]
-        public void SerilicationTestDeleteInking()
+        public void SerializationTestDeleteInking()
         {
-            this.PerformSerializationTest("TestDeleteInking", "DeleteInking");
+            this.PerformSerializationTest("TestDeleteInking", "Delete Inking");
         }
 
         /// <summary>
-        /// Test the serilization and deserilization of a DyKnow file that contains resized ink content.
+        /// Test the serialization and deserialization of a DyKnow file that contains resized ink content.
         /// </summary>
         [TestMethod()]
-        public void SerilicationTestScaleInking()
+        public void SerializationTestScaleInking()
         {
             this.PerformSerializationTest("TestScaleInking", "Scale Inking");
         }
 
         /// <summary>
-        /// Test the serilization and deserilization of a DyKnow file that contains a simple image.
+        /// Test the serialization and deserialization of a DyKnow file that contains a simple image.
         /// </summary>
         [TestMethod()]
-        public void SerilicationTestSimpleImage()
+        public void SerializationTestSimpleImage()
         {
             this.PerformSerializationTest("TestSimpleImage", "Simple Image");
         }
 
         /// <summary>
-        /// Test the serilization and deserilization of a DyKnow file that contains a multiple images.
+        /// Test the serialization and deserialization of a DyKnow file that contains a multiple images.
         /// </summary>
         [TestMethod()]
-        public void SerilicationTestMultipleImages()
+        public void SerializationTestMultipleImages()
         {
             this.PerformSerializationTest("TestMultipleImages", "Multiple Images");
         }
 
         /// <summary>
-        /// Test the serilization and deserilization of a DyKnow file that contains moderator full page text.
+        /// Test the serialization and deserialization of a DyKnow file that contains moderator full page text.
         /// </summary>
         [TestMethod()]
-        public void SerilicationTestFullPanelTextModerator()
+        public void SerializationTestFullPanelTextModerator()
         {
             this.PerformSerializationTest("TestFullPanelTextModerator", "Full Panel Text Moderator");
         }
@@ -149,12 +149,12 @@ namespace UnitTests
         }
 
         /// <summary>
-        /// Test the serialization and deserialization of a DyKnow file that was retreived from a session.
+        /// Test the serialization and deserialization of a DyKnow file that was retrieved from a session.
         /// </summary>
         [TestMethod()]
-        public void SerializationTestRetreivedPanels()
+        public void SerializationTestRetrievedPanels()
         {
-            this.PerformSerializationTest("TestRetrievedPanels", "Retreived Panels");
+            this.PerformSerializationTest("TestRetrievedPanels", "Retrieved Panels");
         }
 
         /// <summary>
@@ -266,7 +266,7 @@ namespace UnitTests
                 string repacked = this.SerializeDyKnow(dyknow);
 
                 // TODO: Fix underlying problem with RTF and \r
-                // Remove the cariage returns from both of the strings before comparison.
+                // Remove the carriage returns from both of the strings before comparison.
                 // This is a hack that will let more of the tests pass
                 original = original.Replace("\r", string.Empty);
                 repacked = repacked.Replace("\r", string.Empty);
@@ -286,7 +286,7 @@ namespace UnitTests
                     trr.Close();
                 }
 
-                Assert.AreEqual(original, repacked, "The reserialized object did not match the original xml");
+                Assert.AreEqual(original, repacked, "The reserialized object did not match the original XML");
             }
         }
 
@@ -294,7 +294,7 @@ namespace UnitTests
         /// Gets the content of the file.
         /// </summary>
         /// <param name="name">The name of the file.</param>
-        /// <returns>A string containg all of the contents of the file</returns>
+        /// <returns>A string containing all of the contents of the file</returns>
         private string GetFileContent(string name)
         {
             string file = "..\\..\\..\\UnitTests\\DyKnowFiles\\" + name + ".dyz";
@@ -308,7 +308,7 @@ namespace UnitTests
         }
 
         /// <summary>
-        /// Deerializes the DyKnow string.
+        /// Deserializes the DyKnow string.
         /// </summary>
         /// <param name="data">The string representation of a serialized DyKnow object.</param>
         /// <returns>A DyKnow object on success; otherwise null.</returns>

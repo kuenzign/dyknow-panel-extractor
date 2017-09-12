@@ -9,10 +9,10 @@
     <StackPanel Background="LightSteelBlue">
         <StackPanel.Resources>
             <Style TargetType="Label" x:Key="Title">
-                <Setter Property="FontSize" Value="35"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="FontSize" Value="35" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="Foreground" Value="DarkBlue" />
             </Style>
             <Style TargetType="Label" x:Key="Heading">
                 <Setter Property="FontWeight" Value="Bold" />
@@ -35,7 +35,7 @@
             </Style>
         </StackPanel.Resources>
         <Label Style="{StaticResource Title}">DPX-Tools</Label>
-        <Label Name="ApplicationName"  Style="{StaticResource Heading}"/>
+        <Label Name="ApplicationName"  Style="{StaticResource Heading}" />
         <Label Name="VersionNumber" />
         <Separator />
         <Label  Style="{StaticResource Heading}">Created by:</Label>
@@ -46,7 +46,7 @@
         <Separator />
         <Label>Code license: GNU General Public License v3</Label>
         <Label>
-            <Hyperlink NavigateUri="http://code.google.com/p/dyknow-panel-extractor/">http://code.google.com/p/dyknow-panel-extractor/</Hyperlink>
+            <Hyperlink NavigateUri="http://code.google.com/p/DyKnow-panel-extractor/">http://code.google.com/p/DyKnow-panel-extractor/</Hyperlink>
         </Label>
         <Separator />
         <Button Name="buttonOk" Width="100" Margin="10" Click="Button_ok">Ok</Button>

@@ -154,9 +154,9 @@ namespace DiffMatchPatch
         public int length2;
 
         /**
-         * Emmulate GNU diff's format.
+         * Emulate GNU diff's format.
          * Header: @@ -382,8 +481,9 @@
-         * Indicies are printed as 1-based, not 0-based.
+         * Indices are printed as 1-based, not 0-based.
          * @return The GNU diff string.
          */
         public override string ToString()
@@ -215,7 +215,7 @@ namespace DiffMatchPatch
 
     /**
      * Class containing the diff, match and patch methods.
-     * Also Contains the behaviour settings.
+     * Also Contains the behavior settings.
      */
     public class diff_match_patch
     {
@@ -499,7 +499,7 @@ namespace DiffMatchPatch
             string line;
             StringBuilder chars = new StringBuilder();
             // Walk the text, pulling out a Substring for each line.
-            // text.split('\n') would would temporarily double our memory footprint.
+            // text.split('\n') would temporarily double our memory footprint.
             // Modifying text would create many large strings to garbage collect.
             while (lineEnd < text.Length - 1)
             {
@@ -1337,7 +1337,7 @@ namespace DiffMatchPatch
                         {
                             if (count_delete != 0 && count_insert != 0)
                             {
-                                // Factor out any common prefixies.
+                                // Factor out any common prefixes.
                                 commonlength = this.diff_commonPrefix(text_insert, text_delete);
                                 if (commonlength != 0)
                                 {
@@ -1357,7 +1357,7 @@ namespace DiffMatchPatch
                                     text_insert = text_insert.Substring(commonlength);
                                     text_delete = text_delete.Substring(commonlength);
                                 }
-                                // Factor out any common suffixies.
+                                // Factor out any common suffixes.
                                 commonlength = this.diff_commonSuffix(text_insert, text_delete);
                                 if (commonlength != 0)
                                 {

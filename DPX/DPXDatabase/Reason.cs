@@ -86,6 +86,6 @@ namespace DPXDatabase
         public override string ToString()
         {
             return this.description;
-        } 
+        }
     }
 }

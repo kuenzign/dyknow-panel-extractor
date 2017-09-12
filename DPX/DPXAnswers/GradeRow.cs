@@ -129,7 +129,7 @@ namespace DPXAnswers
         }
 
         /// <summary>
-        /// Gets the rect.
+        /// Gets the rectangle.
         /// </summary>
         /// <value>The rectangle.</value>
         public Rect Rect
@@ -188,16 +188,19 @@ namespace DPXAnswers
                     this.ans.Foreground = Brushes.Black;
                     this.ans.FontWeight = FontWeights.Normal;
                     break;
+
                 case Grade.CORRECT:
                     this.ans.Content = BoxAnalysis.BoxGradeString(grade);
                     this.ans.Foreground = Brushes.DarkGreen;
                     this.ans.FontWeight = FontWeights.Bold;
                     break;
+
                 case Grade.INCORRECT:
                     this.ans.Content = BoxAnalysis.BoxGradeString(grade);
                     this.ans.Foreground = Brushes.DarkRed;
                     this.ans.FontWeight = FontWeights.Bold;
                     break;
+
                 case Grade.INVALID:
                     this.ans.Content = BoxAnalysis.BoxGradeString(grade);
                     this.ans.Foreground = Brushes.Black;

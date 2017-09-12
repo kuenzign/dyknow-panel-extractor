@@ -60,12 +60,12 @@ namespace DPXDatabase
         /// <param name="isBlank">Flag that determines if the panel is blank.</param>
         /// <param name="analysis">The analysis of the panel.</param>
         public DisplayPanelInfo(
-            DateTime date, 
-            string filename, 
-            int slideNumber, 
+            DateTime date,
+            string filename,
+            int slideNumber,
             int totalStrokeCount,
-            int netStrokeCount, 
-            bool isBlank, 
+            int netStrokeCount,
+            bool isBlank,
             string analysis)
         {
             this.date = date;
@@ -85,12 +85,12 @@ namespace DPXDatabase
         {
             get { return this.date; }
         }
-        
+
         /// <summary>
         /// Gets the file name.
         /// </summary>
         /// <value>The file name.</value>
-        public string Filename
+        public string FileName
         {
             get { return this.filename; }
         }

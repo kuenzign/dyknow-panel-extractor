@@ -1,41 +1,41 @@
 ﻿<Window x:Class="DPXGrader.PanelProcessorWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="DPX Grader" 
-    Height="685" Width="790" 
+    Title="DPX Grader"
+    Height="685" Width="790"
     MinHeight="685" MinWidth="790"
     Icon="Icon.ico">
     <DockPanel Background="#DDDDDD">
         <DockPanel.Resources>
             <Style TargetType="Label" x:Key="StepLabel">
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="FontSize" Value="25"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="DarkBlue" />
             </Style>
             <Style TargetType="Label" x:Key="DescriptionLabel">
-                <Setter Property="FontSize" Value="12"/>
-                <Setter Property="HorizontalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="Foreground" Value="DarkBlue" />
             </Style>
             <Style TargetType="Label" x:Key="InformationLabel">
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="DarkBlue" />
             </Style>
             <Style TargetType="Button">
-                <Setter Property="Margin" Value="10"/>
-                <Setter Property="Background" Value="LightSteelBlue"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
-                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Background" Value="LightSteelBlue" />
+                <Setter Property="Foreground" Value="DarkBlue" />
+                <Setter Property="FontWeight" Value="Bold" />
             </Style>
             <Style TargetType="TextBox">
-                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Margin" Value="10" />
             </Style>
             <Style TargetType="Separator">
-                <Setter Property="Background" Value="DarkBlue"/>
+                <Setter Property="Background" Value="DarkBlue" />
             </Style>
             <Style TargetType="RadioButton">
-                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="Foreground" Value="DarkBlue" />
             </Style>
         </DockPanel.Resources>
         <!-- Step 1 -->
@@ -49,13 +49,13 @@
                 </StackPanel>
                 <DockPanel>
                     <TextBox Name="TextBoxFileName" IsReadOnly="True" DockPanel.Dock="Top" />
-                    <ScrollViewer 
+                    <ScrollViewer
                         Margin="10,0,10,10"
                         HorizontalScrollBarVisibility="Visible"
                         VerticalScrollBarVisibility="Hidden"
                         Background="White"
                         DockPanel.Dock="Top">
-                        <StackPanel 
+                        <StackPanel
                             Name="PanelScrollView"
                             Height="100"
                             Orientation="Horizontal"
@@ -97,7 +97,7 @@
                         <RadioButton Name="RadioButtonTopRight" Margin="10,2,10,2" GroupName="BoxLocation" Checked="RadioButtonPosition_Checked">Top Right</RadioButton>
                         <RadioButton Name="RadioButtonBottomLeft" Margin="10,2,10,2" GroupName="BoxLocation" Checked="RadioButtonPosition_Checked">Bottom Left</RadioButton>
                         <RadioButton Name="RadioButtonBottomRight" Margin="10,2,10,10" GroupName="BoxLocation" Checked="RadioButtonPosition_Checked">Bottom Right</RadioButton>
-                        <Separator Margin="10"/>
+                        <Separator Margin="10" />
                         <Button Name="ButtonPreview" Click="ButtonPreview_Click">Preview Recognition</Button>
                         <TextBox Name="TextBoxPreviewOutput" MaxLines="3" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" />
                     </StackPanel>

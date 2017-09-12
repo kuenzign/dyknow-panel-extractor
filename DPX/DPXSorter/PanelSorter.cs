@@ -69,7 +69,7 @@ namespace DPXSorter
             FileStream originalFile = new FileStream(this.inputfile, FileMode.Open, FileAccess.Read, FileShare.Read);
             GZipStream unzipedFile = new GZipStream(originalFile, CompressionMode.Decompress);
             XmlTextReader xmlFile = new XmlTextReader(unzipedFile);
-            
+
             // File Output
             FileStream newFile = new FileStream(this.outputfile, FileMode.Create, FileAccess.Write, FileShare.Write);
             GZipStream zippedFile = new GZipStream(newFile, CompressionMode.Compress);
@@ -109,7 +109,7 @@ namespace DPXSorter
                             newXmlFile.WriteAttributeString(xmlFile.Name.ToString(), xmlFile.Value.ToString());
                         }
                     }
-                } 
+                }
                 else if (xmlFile.NodeType == XmlNodeType.EndElement)
                 {
                     if (xmlFile.Name.ToString() == "PAGE")

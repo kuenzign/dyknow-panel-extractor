@@ -105,7 +105,7 @@ namespace DPXReader.DyKnow
             get { return this.vrsn; }
             set { this.vrsn = value; }
         }
-        
+
         /// <summary>
         /// Gets or sets the XAML.
         /// </summary>

@@ -31,11 +31,11 @@ namespace DPXReader.DyKnow
                 MemoryStream memoryStream = new MemoryStream();
                 XmlSerializer xs = new XmlSerializer(type);
                 XmlTextWriter xmlTextWriter = new XmlTextWriter(memoryStream, Encoding.UTF8);
-                
+
                 // xmlTextWriter.Formatting = Formatting.Indented;
                 XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
                 ns.Add(string.Empty, string.Empty);
-                
+
                 xs.Serialize(xmlTextWriter, obj, ns);
                 memoryStream = (MemoryStream)xmlTextWriter.BaseStream;
                 result = SerializerHelper.UTF8ByteArrayToString(memoryStream.ToArray());

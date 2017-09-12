@@ -195,7 +195,7 @@ namespace DPXReader.DyKnow
         /// <summary>
         /// Renders the specified page on the provided InkCanvas.
         /// </summary>
-        /// <param name="inky">The InkCanvas to redner the page on.</param>
+        /// <param name="inky">The InkCanvas to render the page on.</param>
         /// <param name="page">The page number.</param>
         public void Render(InkCanvas inky, int page)
         {
@@ -224,7 +224,7 @@ namespace DPXReader.DyKnow
                 double left = img.CustomPositionLeft * inky.Width * inky.Width / img.PW;
                 double top = img.CustomPositionTop * inky.Height * inky.Height / img.PH;
 
-                // Allows for indipendent canvas sizes. (Not sure why this was necessary...)
+                // Allows for independent canvas sizes. (Not sure why this was necessary...)
                 scaleW = scaleW * 1024 / inky.Width;
                 scaleH = scaleH * 768 / inky.Height;
                 left = left * 1024 / inky.Width;

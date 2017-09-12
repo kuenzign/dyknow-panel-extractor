@@ -132,7 +132,7 @@ namespace DPXReader
         /// </returns>
         public override string ToString()
         {
-            return "UT=" + this.ut.ToString() + " PW=" + this.pw.ToString() + " UID=" + this.uid + 
+            return "UT=" + this.ut.ToString() + " PW=" + this.pw.ToString() + " UID=" + this.uid +
                 " DATA=" + this.data + " DEL=" + this.deleted.ToString();
         }
     }

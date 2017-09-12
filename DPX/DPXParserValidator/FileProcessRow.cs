@@ -147,7 +147,7 @@ namespace DPXParserValidator
         }
 
         /// <summary>
-        /// Dispatcheds the process update.
+        /// Dispatched the process update.
         /// </summary>
         /// <param name="result">The result.</param>
         private void DispatchedProcessUpdate(ParserTestResult result)

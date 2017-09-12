@@ -114,11 +114,11 @@ namespace DPXReader
                 {
                     DyKnowImage dki = new DyKnowImage(
                         Int32.Parse(xmlFile.GetAttribute("UT")),
-                        xmlFile.GetAttribute("SP"), 
+                        xmlFile.GetAttribute("SP"),
                         Int32.Parse(xmlFile.GetAttribute("PW")),
-                        Int32.Parse(xmlFile.GetAttribute("PH")), 
+                        Int32.Parse(xmlFile.GetAttribute("PH")),
                         xmlFile.GetAttribute("UID"),
-                        xmlFile.GetAttribute("ID"), 
+                        xmlFile.GetAttribute("ID"),
                         Int32.Parse(xmlFile.GetAttribute("WID")),
                         Int32.Parse(xmlFile.GetAttribute("HEI")));
                     this.images.Add(dki);

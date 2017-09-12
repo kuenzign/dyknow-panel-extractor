@@ -31,7 +31,7 @@ namespace DPXGrader
     public partial class PanelProcessorWindow : Window
     {
         /// <summary>
-        /// The dyknow file that is read in.
+        /// The DyKnow file that is read in.
         /// </summary>
         private DyKnow dyknow;
 
@@ -610,7 +610,7 @@ namespace DPXGrader
                 }
             }
 
-            // Sort the reqults queue (not efficient, but it should already be nearly sorted)
+            // Sort the results queue (not efficient, but it should already be nearly sorted)
             lock (this.results)
             {
                 for (int pass = 1; pass < this.results.Count; pass++)

@@ -37,7 +37,7 @@ namespace DPXCommon
         }
 
         /// <summary>
-        /// Load the clicked hyperlink in a new web broswer window.
+        /// Load the clicked hyperlink in a new web browser window.
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="e">Event arguments.</param>

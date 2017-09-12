@@ -53,7 +53,7 @@ namespace DPXAnswers
         }
 
         /// <summary>
-        /// Gets the answer rect.
+        /// Gets the answer rectangle.
         /// </summary>
         /// <param name="rect">The rectangle.</param>
         /// <returns>The AnswerRect.</returns>

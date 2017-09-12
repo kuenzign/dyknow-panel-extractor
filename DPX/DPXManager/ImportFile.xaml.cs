@@ -24,7 +24,7 @@ namespace DPXManager
     /// The tab that displays the interface for importing a DyKnow file.
     /// </summary>
     public partial class ImportFile : Page
-    {   
+    {
         /// <summary>
         /// Creates an instance of the singleton controller.
         /// </summary>
@@ -74,7 +74,7 @@ namespace DPXManager
         /// <summary>
         /// Loads the file using the DyKnow reader and displays its contents in the grid.
         /// </summary>
-        /// <param name="file">The path to the file to oepn.</param>
+        /// <param name="file">The path to the file to open.</param>
         private void DisplayFile(string file)
         {
             this.dr = new DyKnowReader(file);
@@ -199,8 +199,8 @@ namespace DPXManager
             else
             {
                 int i = this.c.AddDyKnowFile(
-                    this.dr, 
-                    System.IO.Path.GetFileNameWithoutExtension(textBoxSaveFileName.Text), 
+                    this.dr,
+                    System.IO.Path.GetFileNameWithoutExtension(textBoxSaveFileName.Text),
                     comboBoxDates.SelectedValue as Classdate);
                 if (i < 0)
                 {

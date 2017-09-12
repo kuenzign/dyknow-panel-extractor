@@ -54,7 +54,7 @@ namespace DPXAnswers
         /// <summary>
         /// Initializes a new instance of the <see cref="AnswerProcessQueueItem"/> class.
         /// </summary>
-        /// <param name="dyknow">The dyknow file.</param>
+        /// <param name="dyknow">The DyKnow file.</param>
         /// <param name="index">The panel index.</param>
         /// <param name="answer">The answer.</param>
         /// <param name="dispatcher">The dispatcher.</param>
@@ -99,7 +99,7 @@ namespace DPXAnswers
                 goal = this.dyknow.DATA.Count;
             }
 
-            // Identify all of the answer boxs
+            // Identify all of the answer boxes
             Collection<Abox> aboxes = new Collection<Abox>();
             for (int i = 0; i < page.OLST.Count; i++)
             {
@@ -124,7 +124,7 @@ namespace DPXAnswers
                     {
                         // Perform handwriting recognition
                         theInkAnalyzer = InkAnalysisHelper.Analyze(strokes, 4);
-                        
+
                         // Generate the answer box thumbnail
                         Image img = (Image)this.dispatcher.Invoke(new GenerateImageDelegate(this.dyknow.GetAnswerBoxThumbnail), strokes, ink.Width, ink.Height, bounds);
 
@@ -154,7 +154,7 @@ namespace DPXAnswers
                     }
                 }
             }
-            
+
             // Mark the answer as complete
             lock (this.answer)
             {

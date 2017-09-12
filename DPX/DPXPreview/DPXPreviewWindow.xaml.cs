@@ -78,7 +78,7 @@ namespace DPXPreview
         }
 
         /// <summary>
-        /// Opens the dy know file.
+        /// Opens the DyKnow file.
         /// </summary>
         /// <param name="filename">The filename.</param>
         private void OpenDyKnowFile(string filename)
@@ -135,7 +135,7 @@ namespace DPXPreview
             {
                 FileStream fs = new FileStream(saveFileDialog1.FileName, FileMode.Create);
                 RenderTargetBitmap rtb = new RenderTargetBitmap(Convert.ToInt32(Inky.Width / 2.0), Convert.ToInt32(Inky.Height / 2.0), 96d, 96d, PixelFormats.Default);
-               
+
                 rtb.Render(Inky);
                 JpegBitmapEncoder encoder = new JpegBitmapEncoder();
                 encoder.Frames.Add(BitmapFrame.Create(rtb));

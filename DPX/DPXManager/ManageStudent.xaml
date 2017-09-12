@@ -5,7 +5,7 @@
     <DockPanel Height="Auto" Width="Auto">
         <DockPanel DockPanel.Dock="Left" Margin="10,10,10,10" Width="250">
             <Label Height="28" VerticalAlignment="Top" DockPanel.Dock="Top">Manage Students</Label>
-            <TextBox Height="23" Name="textBoxFilter" DockPanel.Dock="Top" TextChanged="TxtSearch_TextChanged"/>
+            <TextBox Height="23" Name="textBoxFilter" DockPanel.Dock="Top" TextChanged="TxtSearch_TextChanged" />
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
                 <Label>Show Only Students not in a Section:</Label>
                 <CheckBox Name="checkBoxFilterNoSection" Margin="0,8,0,0" Checked="CheckBoxFilterNoSection_Checked" Unchecked="CheckBoxFilterNoSection_Unchecked"></CheckBox>

@@ -91,12 +91,12 @@ namespace DPXDatabase
         /// <param name="section">Student's section.</param>
         /// <param name="isEnrolled">Indicates whether student is enrolled.</param>
         public Student(
-            int id, 
-            string username, 
-            string fullName, 
+            int id,
+            string username,
+            string fullName,
             string firstName,
-            string lastName, 
-            int section, 
+            string lastName,
+            int section,
             bool isEnrolled)
         {
             this.id = id;
@@ -118,11 +118,11 @@ namespace DPXDatabase
         /// <param name="section">Student's section.</param>
         /// <param name="isEnrolled">Indicates whether student is enrolled.</param>
         public Student(
-            string username, 
-            string fullName, 
+            string username,
+            string fullName,
             string firstName,
-            string lastName, 
-            int section, 
+            string lastName,
+            int section,
             bool isEnrolled)
         {
             this.id = -1;

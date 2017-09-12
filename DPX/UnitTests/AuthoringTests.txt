@@ -1,8 +1,8 @@
 ﻿==========================================================================
-    Visual Studio Team System: Overview of Authoring and Running Tests    
+    Visual Studio Team System: Overview of Authoring and Running Tests
 ==========================================================================
 
-This overview describes the features for authoring and running tests in 
+This overview describes the features for authoring and running tests in
 Visual Studio Team System and Visual Studio Team Edition for Software Testers.
 
 Opening Tests
@@ -55,7 +55,7 @@ Each time you run one or more tests, a collection of settings is used to
 determine how those tests are run. These settings are contained in a “test
 run configuration” file.
 
-Here is a partial list of the changes you can make with a test run 
+Here is a partial list of the changes you can make with a test run
 configuration file:
 
  - Change the naming scheme for each test run.
@@ -63,7 +63,7 @@ configuration file:
    tests remotely.
  - Gather code coverage data for the code being tested so that you can see
    which lines of code are covered by your tests.
- - Enable and disable test deployment. 
+ - Enable and disable test deployment.
  - Specify additional files to deploy before tests are run.
  - Select a different host, ASP.NET, for running ASP.NET unit tests.
  - Select a different host, the smart device test host, for running smart device unit tests.
@@ -75,14 +75,14 @@ configuration file:
    test run.
 
 By default, a test run configuration file is created whenever you create a
-new test project. You make changes to this file by double-clicking it in 
+new test project. You make changes to this file by double-clicking it in
 Solution Explorer and then changing its settings. (Test run configuration
 files have the extension .testrunconfig.)
 
 A solution can contain multiple test run configuration files. Only one of
 those files, known as the “Active” test run configuration file, is used to
 determine the settings that are currently used for test runs. You select
-the active test run configuration by clicking Select Active Test Run 
+the active test run configuration by clicking Select Active Test Run
 Configuration on the Test menu.
 
 -------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ There are three specialized variants of unit tests:
  - ASP.NET unit tests are unit tests that exercise code in an ASP.NET Web
    application.
  - Smart device unit tests are unit tests that are deployed to a smart device
-   or emulator and then executed by the smart device test host.  
+   or emulator and then executed by the smart device test host.
 
 Web Test: Web tests consist of an ordered series of HTTP requests that you
 record in a browser session using Microsoft Internet Explorer. You can have

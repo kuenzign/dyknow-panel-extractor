@@ -18,7 +18,7 @@ namespace DPXDatabase
         /// The database identifier.
         /// </summary>
         private int id;
-        
+
         /// <summary>
         /// The name of the section.
         /// </summary>

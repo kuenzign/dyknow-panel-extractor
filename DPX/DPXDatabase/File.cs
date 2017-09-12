@@ -60,7 +60,7 @@ namespace DPXDatabase
         private double stdDevDataLength;
 
         /// <summary>
-        /// The mimimum length of the pen stroke data.
+        /// The minimum length of the pen stroke data.
         /// </summary>
         private double minDataLength;
 
@@ -84,16 +84,16 @@ namespace DPXDatabase
         /// <param name="minDataLength">The minimum amount of data on a panel.</param>
         /// <param name="maxDataLength">The maximum amount of data on a panel.</param>
         public File(
-            int id, 
-            int classdate, 
-            string fileName, 
-            double meanStrokes, 
+            int id,
+            int classdate,
+            string fileName,
+            double meanStrokes,
             double stdDevStrokes,
-            double minStrokes, 
-            double maxStrokes, 
-            double meanDataLength, 
+            double minStrokes,
+            double maxStrokes,
+            double meanDataLength,
             double stdDevDataLength,
-            double minDataLength, 
+            double minDataLength,
             double maxDataLength)
         {
             this.id = id;
@@ -123,15 +123,15 @@ namespace DPXDatabase
         /// <param name="minDataLength">The minimum amount of data on a panel.</param>
         /// <param name="maxDataLength">The maximum amount of data on a panel.</param>
         public File(
-            int classdate, 
-            string fileName, 
-            double meanStrokes, 
+            int classdate,
+            string fileName,
+            double meanStrokes,
             double stdDevStrokes,
-            double minStrokes, 
-            double maxStrokes, 
-            double meanDataLength, 
+            double minStrokes,
+            double maxStrokes,
+            double meanDataLength,
             double stdDevDataLength,
-            double minDataLength, 
+            double minDataLength,
             double maxDataLength)
         {
             this.id = -1;

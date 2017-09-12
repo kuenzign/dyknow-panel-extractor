@@ -45,7 +45,7 @@ namespace DPXManager
         }
 
         /// <summary>
-        /// The selected date changed and the add button will toggel depending on if it is a valid date.
+        /// The selected date changed and the add button will toggle depending on if it is a valid date.
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="e">Event arguments.</param>

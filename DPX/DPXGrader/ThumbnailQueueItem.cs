@@ -48,9 +48,9 @@ namespace DPXGrader
         public override void Run()
         {
             Image myImage = this.window.DyKnow.GetThumbnail(
-                this.num, 
-                this.window.Inky.ActualWidth, 
-                this.window.Inky.ActualHeight, 
+                this.num,
+                this.window.Inky.ActualWidth,
+                this.window.Inky.ActualHeight,
                 0.4);
             Border b = new Border();
             b.Child = myImage;

@@ -80,7 +80,7 @@ namespace DPXSorter
         }
 
         /// <summary>
-        /// Sort the Dyknow pages and save the output to a new file.
+        /// Sort the DyKnow pages and save the output to a new file.
         /// </summary>
         /// <param name="sender">The object that raised the event.</param>
         /// <param name="e">Event arguments.</param>
@@ -116,7 +116,7 @@ namespace DPXSorter
                 MessageBox.Show("A destination file must be specified.", "Alert");
             }
         }
-        
+
         /// <summary>
         /// Display the DPXAbout window.
         /// </summary>

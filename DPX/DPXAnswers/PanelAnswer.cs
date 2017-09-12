@@ -178,7 +178,7 @@ namespace DPXAnswers
         /// <summary>
         /// Gets the box analysis.
         /// </summary>
-        /// <param name="rect">The rect to locate.</param>
+        /// <param name="rect">The rectangle to locate.</param>
         /// <returns>The BoxAnalysis for the given region.</returns>
         internal BoxAnalysis GetBoxAnalysis(AnswerRect rect)
         {
@@ -193,7 +193,7 @@ namespace DPXAnswers
         }
 
         /// <summary>
-        /// Flags the procesed.
+        /// Flags the processed.
         /// </summary>
         internal void FlagProcesed()
         {

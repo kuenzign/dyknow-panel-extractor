@@ -88,7 +88,7 @@ namespace DPXDatabase
             get { return this.panelWithCredit; }
             set { this.panelWithCredit = value; }
         }
-        
+
         /// <summary>
         /// Gets or sets a value indicating whether there is a panel without credit.
         /// </summary>

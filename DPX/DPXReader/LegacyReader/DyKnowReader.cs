@@ -109,7 +109,7 @@ namespace DPXReader
                     // We only care about the PAGE nodes
                     if (this.xmlFile.Name.ToString() == "PAGE")
                     {
-                        // Process the PAGE sub-tree and store the inforation
+                        // Process the PAGE sub-tree and store the information
                         DyKnowPage panel = new DyKnowPage(this.xmlFile.ReadSubtree(), myRow++);
 
                         // Add the page information to the list of pages
@@ -351,7 +351,7 @@ namespace DPXReader
         /// Gets the DyKnow page.
         /// </summary>
         /// <param name="i">The page number.</param>
-        /// <returns>The requiested DyKnow page.</returns>
+        /// <returns>The requested DyKnow page.</returns>
         public DyKnowPage GetDyKnowPage(int i)
         {
             return this.dyknowPages[i];
@@ -386,8 +386,8 @@ namespace DPXReader
                 double scaleH = ((dki[i].ImageHeight * inky.Height) / bi.Height) * (inky.Height / dki[i].Ph);
                 double left = dki[i].PositionLeft * inky.Width * inky.Width / dki[i].Pw;
                 double top = dki[i].PositionTop * inky.Height * inky.Height / dki[i].Ph;
-                
-                // Allows for indipendent canvas sizes. (Not sure why this was necessary...)
+
+                // Allows for independent canvas sizes. (Not sure why this was necessary...)
                 scaleW = scaleW * 1024 / inky.Width;
                 scaleH = scaleH * 768 / inky.Height;
                 left = left * 1024 / inky.Width;
@@ -405,7 +405,7 @@ namespace DPXReader
                 Image im = new Image();
                 im.Source = tb;
                 inky.Children.Add(im);
-                
+
                 // Set the position on the canvas
                 InkCanvas.SetLeft(im, left);
                 InkCanvas.SetTop(im, top);

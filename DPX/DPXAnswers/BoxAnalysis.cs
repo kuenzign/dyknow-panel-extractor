@@ -24,7 +24,7 @@ namespace DPXAnswers
         private string answer;
 
         /// <summary>
-        /// The alternate strings for tha answer box.
+        /// The alternate strings for the answer box.
         /// </summary>
         private Collection<string> alternates;
 
@@ -100,17 +100,20 @@ namespace DPXAnswers
         /// Gets the string representation of a BoxGrade.
         /// </summary>
         /// <param name="grade">The grade to convert.</param>
-        /// <returns>The string represntation.</returns>
+        /// <returns>The string representation.</returns>
         public static string BoxGradeString(Grade grade)
         {
             switch (grade)
             {
                 case Grade.NOTSET:
                     return "?";
+
                 case Grade.CORRECT:
                     return "Correct";
+
                 case Grade.INCORRECT:
                     return "Incorrect";
+
                 case Grade.INVALID:
                     return "?";
             }
@@ -165,7 +168,7 @@ namespace DPXAnswers
         /// Returns a hash code for this instance.
         /// </summary>
         /// <returns>
-        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+        /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
         public override int GetHashCode()
         {

@@ -41,7 +41,7 @@ namespace DPXAnswers
         /// Initializes a new instance of the <see cref="ImageProcessQueueItem"/> class.
         /// </summary>
         /// <param name="window">The answer window.</param>
-        /// <param name="dyknow">The dyknow file.</param>
+        /// <param name="dyknow">The DyKnow file.</param>
         /// <param name="index">The panel index.</param>
         internal ImageProcessQueueItem(AnswerWindow window, DyKnow dyknow, int index)
         {
@@ -56,9 +56,9 @@ namespace DPXAnswers
         public override void Run()
         {
             Image myImage = this.dyknow.GetThumbnail(
-                this.index, 
-                this.window.Inky.ActualWidth, 
-                this.window.Inky.ActualHeight, 
+                this.index,
+                this.window.Inky.ActualWidth,
+                this.window.Inky.ActualHeight,
                 0.4);
             Border b = new Border();
             b.Child = myImage;
@@ -75,7 +75,7 @@ namespace DPXAnswers
 
             b.BorderThickness = new Thickness(1);
             b.Margin = new Thickness(5);
-            
+
             b.MouseDown += this.window.PanelSelected;
             b.Tag = this.index;
 

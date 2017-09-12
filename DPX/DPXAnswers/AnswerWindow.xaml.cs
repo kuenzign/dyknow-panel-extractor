@@ -172,7 +172,7 @@ namespace DPXAnswers
 
             // Set the progress bar to zero
             Dispatcher.Invoke(
-                new ProgressBarDelegate(this.ZeroProgressBar), 
+                new ProgressBarDelegate(this.ZeroProgressBar),
                 DispatcherPriority.Normal,
                 goal);
 

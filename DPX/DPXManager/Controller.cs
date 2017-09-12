@@ -14,7 +14,7 @@ namespace DPXManager
     using DPXReader;
 
     /// <summary>
-    /// Singleton class used for accessing the datbase.
+    /// Singleton class used for accessing the database.
     /// </summary>
     internal class Controller
     {
@@ -266,23 +266,23 @@ namespace DPXManager
         /// </summary>
         /// <param name="dr">DyKnow file to add.</param>
         /// <param name="filename">The filename of the DyKnow file.</param>
-        /// <param name="cd">The class date for the DyKnow fiel.</param>
-        /// <returns>ID for the file that was added to the datbase.</returns>
+        /// <param name="cd">The class date for the DyKnow file.</param>
+        /// <returns>ID for the file that was added to the database.</returns>
         public int AddDyKnowFile(DyKnowReader dr, string filename, Classdate cd)
         {
             File f = new File(
-                cd.Id, 
-                filename, 
-                dr.MeanStrokes, 
-                dr.StdDevStrokes, 
+                cd.Id,
+                filename,
+                dr.MeanStrokes,
+                dr.StdDevStrokes,
                 dr.MinStrokeCount,
-                dr.MaxStrokeCount, 
-                dr.MeanStrokeDistance, 
+                dr.MaxStrokeCount,
+                dr.MeanStrokeDistance,
                 dr.StdDevStrokeDistance,
-                dr.MinStrokeDistance, 
+                dr.MinStrokeDistance,
                 dr.MaxStrokeDistance);
             int fileId = this.db.AddFile(f);
-            
+
             if (fileId < 0)
             {
                 return fileId;

@@ -51,7 +51,7 @@ namespace DPXParserValidator
         private int currentRow;
 
         /// <summary>
-        /// The flag that indicates that the resutls should be written out.
+        /// The flag that indicates that the results should be written out.
         /// </summary>
         private bool writeResultsFlag;
 
@@ -66,7 +66,7 @@ namespace DPXParserValidator
         private int processing;
 
         /// <summary>
-        /// The locak that is used when accessing the processing count.
+        /// The lock that is used when accessing the processing count.
         /// </summary>
         private object processingLock;
 
@@ -155,7 +155,7 @@ namespace DPXParserValidator
                 {
                     this.ButtonClearResults.IsEnabled = false;
                 }
-                
+
                 // Add all of the files to the GUI and add them to the worker queue
                 for (int i = 0; i < files.Length; i++)
                 {
@@ -286,7 +286,7 @@ namespace DPXParserValidator
                 string repacked = this.SerializeDyKnow(dyknow);
 
                 // TODO: Fix underlying problem with RTF and \r
-                // Remove the cariage returns from both of the strings before comparison.
+                // Remove the carriage returns from both of the strings before comparison.
                 // This is a hack that will let more of the tests pass
                 original = original.Replace("\r", string.Empty);
                 repacked = repacked.Replace("\r", string.Empty);
@@ -367,7 +367,7 @@ namespace DPXParserValidator
         }
 
         /// <summary>
-        /// Deerializes the DyKnow string.
+        /// Deserializes the DyKnow string.
         /// </summary>
         /// <param name="data">The string representation of a serialized DyKnow object.</param>
         /// <returns>A DyKnow object on success; otherwise null.</returns>

@@ -65,7 +65,7 @@ namespace DPXDatabase
                 }
                 else
                 {
-                    throw new Exception("Probelm retreiving student from database");
+                    throw new Exception("Problem retrieving student from database");
                 }
             }
             catch
@@ -80,7 +80,7 @@ namespace DPXDatabase
 
             return section;
         }
-        
+
         /// <summary>
         /// Adds a specific section to the database.
         /// </summary>
@@ -143,7 +143,7 @@ namespace DPXDatabase
                 }
                 else
                 {
-                    throw new Exception("Probelm retreiving student from database");
+                    throw new Exception("Problem retrieving student from database");
                 }
             }
             catch
@@ -211,22 +211,22 @@ namespace DPXDatabase
                     if (myReader.IsDBNull(5))
                     {
                         students.Add(new Student(
-                            myReader.GetInt32(0), 
-                            myReader.GetString(1), 
+                            myReader.GetInt32(0),
+                            myReader.GetString(1),
                             myReader.GetString(2),
-                            myReader.GetString(3), 
-                            myReader.GetString(4), 
+                            myReader.GetString(3),
+                            myReader.GetString(4),
                             -1,
                             myReader.GetBoolean(6)));
                     }
                     else
                     {
                         students.Add(new Student(
-                            myReader.GetInt32(0), 
-                            myReader.GetString(1), 
+                            myReader.GetInt32(0),
+                            myReader.GetString(1),
                             myReader.GetString(2),
-                            myReader.GetString(3), 
-                            myReader.GetString(4), 
+                            myReader.GetString(3),
+                            myReader.GetString(4),
                             myReader.GetInt32(5),
                             myReader.GetBoolean(6)));
                     }
@@ -245,7 +245,7 @@ namespace DPXDatabase
 
             return students;
         }
-        
+
         /// <summary>
         /// Gets a specific student.
         /// </summary>
@@ -267,29 +267,29 @@ namespace DPXDatabase
                     if (myReader.IsDBNull(5))
                     {
                         student = new Student(
-                            myReader.GetInt32(0), 
-                            myReader.GetString(1), 
+                            myReader.GetInt32(0),
+                            myReader.GetString(1),
                             myReader.GetString(2),
-                            myReader.GetString(3), 
-                            myReader.GetString(4), 
+                            myReader.GetString(3),
+                            myReader.GetString(4),
                             -1,
                             myReader.GetBoolean(6));
                     }
                     else
                     {
                         student = new Student(
-                            myReader.GetInt32(0), 
-                            myReader.GetString(1), 
+                            myReader.GetInt32(0),
+                            myReader.GetString(1),
                             myReader.GetString(2),
-                            myReader.GetString(3), 
-                            myReader.GetString(4), 
+                            myReader.GetString(3),
+                            myReader.GetString(4),
                             myReader.GetInt32(5),
                             myReader.GetBoolean(6));
                     }
                 }
                 else
                 {
-                    throw new Exception("Probelm retreiving student from database");
+                    throw new Exception("Problem retrieving student from database");
                 }
             }
             catch
@@ -304,7 +304,7 @@ namespace DPXDatabase
 
             return student;
         }
-        
+
         /// <summary>
         /// Add a student to the database.
         /// </summary>
@@ -392,7 +392,7 @@ namespace DPXDatabase
                 return true;
             }
         }
-        
+
         /// <summary>
         /// Test to see if a username is already in the database.
         /// </summary>
@@ -415,7 +415,7 @@ namespace DPXDatabase
                 }
                 else
                 {
-                    throw new Exception("Probelm retreiving student from database");
+                    throw new Exception("Problem retrieving student from database");
                 }
             }
             catch
@@ -430,7 +430,7 @@ namespace DPXDatabase
 
             return studentTest;
         }
-        
+
         /// <summary>
         /// Changes the section that a student is enrolled in.
         /// </summary>
@@ -506,7 +506,7 @@ namespace DPXDatabase
 
             return true;
         }
-        
+
         /// <summary>
         /// Changes the enrollment status for a student.
         /// </summary>
@@ -563,7 +563,7 @@ namespace DPXDatabase
         /// Adds a file to the database.
         /// </summary>
         /// <param name="f">The file to add to the database.</param>
-        /// <returns>The database identifer for the new file object.</returns>
+        /// <returns>The database identifier for the new file object.</returns>
         public int AddFile(File f)
         {
             this.Open();
@@ -604,7 +604,7 @@ namespace DPXDatabase
 
             return insertId;
         }
-        
+
         /// <summary>
         /// Add a DyKnow file to the database.
         /// </summary>
@@ -614,23 +614,23 @@ namespace DPXDatabase
         public int AddFile(DyKnowReader dr, DateTime d)
         {
             int classdateId = -1;
-            if (!this.IsClassdate(d)) 
+            if (!this.IsClassdate(d))
             {
                 // Date is not in the database
                 this.AddClassdate(d);
             }
 
             classdateId = this.GetClassdateId(d);
-            
+
             File f = new File(
-                classdateId, 
-                dr.FileName, 
-                dr.MaxStrokeCount, 
-                dr.MeanStrokes, 
+                classdateId,
+                dr.FileName,
                 dr.MaxStrokeCount,
-                dr.MeanStrokeDistance, 
-                dr.MeanStrokeDistance, 
-                dr.StdDevStrokeDistance, 
+                dr.MeanStrokes,
+                dr.MaxStrokeCount,
+                dr.MeanStrokeDistance,
+                dr.MeanStrokeDistance,
+                dr.StdDevStrokeDistance,
                 dr.MinStrokeDistance,
                 dr.MaxStrokeDistance);
             return this.AddFile(f);
@@ -677,7 +677,7 @@ namespace DPXDatabase
 
             return true;
         }
-        
+
         /// <summary>
         /// Determines if a class date is already in the database.
         /// </summary>
@@ -712,7 +712,7 @@ namespace DPXDatabase
 
             return panelFound;
         }
-        
+
         /// <summary>
         /// Gets the database identifier for a specified date.
         /// </summary>
@@ -734,7 +734,7 @@ namespace DPXDatabase
                 }
                 else
                 {
-                    throw new Exception("Probelm retreiving student from database");
+                    throw new Exception("Problem retrieving student from database");
                 }
             }
             catch
@@ -749,7 +749,7 @@ namespace DPXDatabase
 
             return id;
         }
-        
+
         /// <summary>
         /// Get a list of class dates.
         /// </summary>
@@ -836,7 +836,7 @@ namespace DPXDatabase
 
             return true;
         }
-        
+
         /// <summary>
         /// Gets all of the panels for the specified student.
         /// </summary>
@@ -855,12 +855,12 @@ namespace DPXDatabase
                 while (myReader.Read())
                 {
                     panelinfo.Add(new DisplayPanelInfo(
-                        myReader.GetDateTime(0), 
+                        myReader.GetDateTime(0),
                         myReader.GetString(1),
-                        myReader.GetInt32(2), 
-                        myReader.GetInt32(3), 
+                        myReader.GetInt32(2),
+                        myReader.GetInt32(3),
                         myReader.GetInt32(4),
-                        myReader.GetBoolean(5), 
+                        myReader.GetBoolean(5),
                         myReader.GetString(6)));
                 }
             }
@@ -922,7 +922,7 @@ namespace DPXDatabase
 
             return true;
         }
-        
+
         /// <summary>
         /// Gets all of the exceptions for the specified student.
         /// </summary>
@@ -941,9 +941,9 @@ namespace DPXDatabase
                 while (myReader.Read())
                 {
                     exceptionlist.Add(new DisplayExceptionInfo(
-                        myReader.GetDateTime(0), 
+                        myReader.GetDateTime(0),
                         myReader.GetBoolean(1),
-                        myReader.GetString(2), 
+                        myReader.GetString(2),
                         myReader.GetString(3)));
                 }
             }
@@ -978,7 +978,7 @@ namespace DPXDatabase
                 while (myReader.Read())
                 {
                     reasons.Add(new Reason(
-                        myReader.GetInt32(0), 
+                        myReader.GetInt32(0),
                         myReader.GetBoolean(1),
                         myReader.GetString(2)));
                 }
@@ -999,7 +999,7 @@ namespace DPXDatabase
         // REPORT GENERATION
 
         /// <summary>
-        /// Generate a report for the specifed dates.
+        /// Generate a report for the specified dates.
         /// </summary>
         /// <param name="dates">The list of dates.</param>
         /// <returns>The report.</returns>

@@ -24,7 +24,7 @@ namespace DPXReader.DyKnow
         /// The page version number.
         /// </summary>
         private string vrsn;
-        
+
         /// <summary>
         /// The uid value.
         /// </summary>
@@ -54,7 +54,7 @@ namespace DPXReader.DyKnow
         /// The onern value.
         /// </summary>
         private string onern;
-        
+
         /// <summary>
         /// The animlist list of objects.
         /// </summary>

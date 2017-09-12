@@ -58,7 +58,7 @@ namespace DPXAnswers
         private Dictionary<int, PanelAnswer> answers;
 
         /// <summary>
-        /// The answer rect factory.
+        /// The answer rectangle factory.
         /// </summary>
         private AnswerRectFactory answerRectFactory;
 
@@ -87,7 +87,7 @@ namespace DPXAnswers
         /// </summary>
         private AnswerManager()
         {
-            // Create the list fo answers
+            // Create the list for answers
             this.answers = new Dictionary<int, PanelAnswer>();
 
             // Make the AnswerRectFactory
@@ -96,7 +96,7 @@ namespace DPXAnswers
             // Create the worker queue
             this.workerQueue = new Queue<QueueItem>();
 
-            // Create the list for traking gradeRows
+            // Create the list for tracking gradeRows
             this.gradeRows = new List<GradeRow>();
 
             // Load the external DLL files that include the clustering algorithms
@@ -385,7 +385,7 @@ namespace DPXAnswers
                     RowDefinition rd = new RowDefinition();
                     rd.Height = GridLength.Auto;
                     g.RowDefinitions.Add(rd);
-                    
+
                     GradeGroup gg = new GradeGroup(ar.Cluster, j);
                     gg.DisplayPanel += this.DisplayPanelRequest;
                     gg.Margin = new Thickness(0, 0, 0, 10);
@@ -453,7 +453,7 @@ namespace DPXAnswers
         }
 
         /// <summary>
-        /// Retreives the panel answer.
+        /// Retrieves the panel answer.
         /// </summary>
         /// <param name="n">The panel number.</param>
         /// <returns>The PanelAnswer if it has been processed; otherwise null.</returns>

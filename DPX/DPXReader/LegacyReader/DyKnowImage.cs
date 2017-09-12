@@ -28,27 +28,27 @@ namespace DPXReader
         /// The ut value.
         /// </summary>
         private int ut;
-        
+
         /// <summary>
         /// The sp value.
         /// </summary>
         private string sp;
-        
+
         /// <summary>
         /// The pw value.
         /// </summary>
         private int pw;
-        
+
         /// <summary>
         /// The ph value.
         /// </summary>
         private int ph;
-        
+
         /// <summary>
         /// The uid value.
         /// </summary>
         private Guid uid;
-        
+
         /// <summary>
         /// The unique id.
         /// </summary>

@@ -6,19 +6,19 @@
     <DockPanel Background="LightSteelBlue">
         <DockPanel.Resources>
             <Style TargetType="Label">
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="DarkBlue" />
             </Style>
             <Style TargetType="Button">
-                <Setter Property="Margin" Value="10"/>
-                <Setter Property="Background" Value="LightSteelBlue"/>
-                <Setter Property="Foreground" Value="DarkBlue"/>
-                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Background" Value="LightSteelBlue" />
+                <Setter Property="Foreground" Value="DarkBlue" />
+                <Setter Property="FontWeight" Value="Bold" />
             </Style>
         </DockPanel.Resources>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Help">
-                <MenuItem Header="_About" Click="DisplayAboutWindow"/>
+                <MenuItem Header="_About" Click="DisplayAboutWindow" />
             </MenuItem>
         </Menu>
         <StackPanel>

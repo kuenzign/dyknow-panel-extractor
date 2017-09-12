@@ -18,7 +18,7 @@ namespace DPXDatabase
         /// The date for the exception.
         /// </summary>
         private int classdate;
-        
+
         /// <summary>
         /// The identifier for the student.
         /// </summary>
