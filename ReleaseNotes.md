@@ -9,7 +9,7 @@
   * The [DPX Grader](DPXGrader.md) window can now be maximized and some minor improvements were made to the GUI to accomidate this change.
   * [DPX Parser Validator](DPXParserValidator.md) was made its own application.  Improvements to this application include using a thread for each CPU core and some other minor changes to the GUI.
   * [DPX Preview](DPXPreview.md) now matches the formatting and style of other application in the DPX-Tools suite.
-  * [DPX Sorter](DPXSorter.md) uses a custom parser to perform the sorting of panels, and this code was moved out of the DPXReader library and directly into the application.  This application should use the [DPX Reader](DPXReader.md) library to perform the sorting ([Issue 18](https://code.google.com/p/dyknow-panel-extractor/issues/detail?id=18)).
+  * [DPX Sorter](DPXSorter.md) uses a custom parser to perform the sorting of panels, and this code was moved out of the DPXReader library and directly into the application.  This application should use the [DPX Reader](DPXReader.md) library to perform the sorting (#18).
   * The About window for the applications now matches the color scheme of the DPX-Tools suite.
 
 ## [Version 0.3.3.0](http://dyknow-panel-extractor.googlecode.com/files/DPX-Tools%200.3.3.0.msi) ##
