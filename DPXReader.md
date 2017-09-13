@@ -11,13 +11,13 @@ The current applications that use this library are DPXGrader and DPXPreview.  Th
 
 ### Known Panel Rendering Problems ###
   * Elements that are not shown
-    * Polls (See #13)
+    * Polls (See [issue 13](https://github.com/kuenzign/dyknow-panel-extractor/issues/13))
     * Web pages
-    * Page text (See #14)
-    * Text boxes (See #15)
-  * Resized or moved ink does not render the transformation properly (See #12)
+    * Page text (See [issue 14](https://github.com/kuenzign/dyknow-panel-extractor/issues/14))
+    * Text boxes (See [issue 15](https://github.com/kuenzign/dyknow-panel-extractor/issues/15))
+  * Resized or moved ink does not render the transformation properly (See [issue 12](https://github.com/kuenzign/dyknow-panel-extractor/issues/12))
 
-### Workaround for #12 ###
+### Workaround for [issue 12](https://github.com/kuenzign/dyknow-panel-extractor/issues/12) ###
 The solution to properly rendering resized or moved elements on the DyKnow panel is to remove the panel history using DyKnow before opening the file using DPX.
 
 ## Important Notes ##
