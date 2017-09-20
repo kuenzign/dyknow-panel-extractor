@@ -74,7 +74,7 @@ namespace DPXAnswers
         /// <param name="height">The panel height.</param>
         /// <param name="rect">The rectangle.</param>
         /// <returns>The image of the answer box.</returns>
-        private delegate Image GenerateImageDelegate(StrokeCollection strokes, double width, double height, System.Windows.Rect rect);
+        private delegate System.Windows.Controls.Image GenerateImageDelegate(StrokeCollection strokes, double width, double height, System.Windows.Rect rect);
 
         /// <summary>
         /// The delegate for call with no arguments.
@@ -87,25 +87,27 @@ namespace DPXAnswers
         public override void Run()
         {
             // Render the ink canvas
-            InkCanvas ink = new InkCanvas();
-            ink.Width = AnswerProcessQueueItem.DefaultWidth;
-            ink.Height = AnswerProcessQueueItem.DefaultHeight;
+            InkCanvas ink = new InkCanvas
+            {
+                Width = AnswerProcessQueueItem.DefaultWidth,
+                Height = AnswerProcessQueueItem.DefaultHeight
+            };
             DPXReader.DyKnow.Page page;
             int goal = 0;
             lock (this.dyknow)
             {
-                page = this.dyknow.DATA[this.index] as DPXReader.DyKnow.Page;
+                page = this.dyknow.Pages[this.index] as DPXReader.DyKnow.Page;
                 this.dyknow.Render(ink, this.index);
-                goal = this.dyknow.DATA.Count;
+                goal = this.dyknow.Pages.Count;
             }
 
             // Identify all of the answer boxes
-            Collection<Abox> aboxes = new Collection<Abox>();
-            for (int i = 0; i < page.OLST.Count; i++)
+            Collection<AnswerBox> aboxes = new Collection<AnswerBox>();
+            for (int i = 0; i < page.Objects.Count; i++)
             {
-                if (page.OLST[i] is Abox)
+                if (page.Objects[i] is AnswerBox)
                 {
-                    aboxes.Add(page.OLST[i] as Abox);
+                    aboxes.Add(page.Objects[i] as AnswerBox);
                 }
             }
 
@@ -126,7 +128,7 @@ namespace DPXAnswers
                         theInkAnalyzer = InkAnalysisHelper.Analyze(strokes, 4);
 
                         // Generate the answer box thumbnail
-                        Image img = (Image)this.dispatcher.Invoke(new GenerateImageDelegate(this.dyknow.GetAnswerBoxThumbnail), strokes, ink.Width, ink.Height, bounds);
+                        System.Windows.Controls.Image img = (System.Windows.Controls.Image)this.dispatcher.Invoke(new GenerateImageDelegate(this.dyknow.GetAnswerBoxThumbnail), strokes, ink.Width, ink.Height, bounds);
 
                         // Add the result to the answer
                         lock (this.answer)

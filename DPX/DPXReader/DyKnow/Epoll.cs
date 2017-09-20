@@ -43,14 +43,14 @@ namespace DPXReader.DyKnow
         private string ep;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -73,14 +73,14 @@ namespace DPXReader.DyKnow
         private string an;
 
         /// <summary>
-        /// The alist value.
+        /// The answers value.
         /// </summary>
-        private ArrayList alist;
+        private ArrayList answers;
 
         /// <summary>
-        /// The wid value.
+        /// The width value.
         /// </summary>
-        private int wid;
+        private int width;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Epoll"/> class.
@@ -145,25 +145,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -211,26 +211,26 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the ALIST.
+        /// Gets or sets the Answers.
         /// </summary>
-        /// <value>The ALIST list.</value>
+        /// <value>The Answers list.</value>
         [XmlArray("ALIST")]
         [XmlArrayItem("A", typeof(Answer), IsNullable = true)]
-        public ArrayList ALIST
+        public ArrayList Answers
         {
-            get { return this.alist; }
-            set { this.alist = value; }
+            get { return this.answers; }
+            set { this.answers = value; }
         }
 
         /// <summary>
-        /// Gets or sets the WID.
+        /// Gets or sets the Width.
         /// </summary>
-        /// <value>The WID value.</value>
+        /// <value>The Width value.</value>
         [XmlElement("WID")]
-        public int WID
+        public int Width
         {
-            get { return this.wid; }
-            set { this.wid = value; }
+            get { return this.width; }
+            set { this.width = value; }
         }
     }
 }

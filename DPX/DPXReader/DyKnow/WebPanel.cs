@@ -23,14 +23,14 @@ namespace DPXReader.DyKnow
         private int ut;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -76,25 +76,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>

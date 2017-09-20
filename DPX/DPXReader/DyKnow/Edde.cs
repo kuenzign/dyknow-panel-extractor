@@ -33,9 +33,9 @@ namespace DPXReader.DyKnow
         private string rtf;
 
         /// <summary>
-        /// The vrsn value;
+        /// The version value;
         /// </summary>
-        private string vrsn;
+        private string version;
 
         /// <summary>
         /// The xaml value.
@@ -47,7 +47,7 @@ namespace DPXReader.DyKnow
         /// </summary>
         public Edde()
         {
-            this.vrsn = null;
+            this.version = null;
         }
 
         /// <summary>
@@ -96,14 +96,14 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the VRSN.
+        /// Gets or sets the Version.
         /// </summary>
-        /// <value>The VRSN value.</value>
+        /// <value>The Version value.</value>
         [XmlAttribute("VRSN")]
-        public string VRSN
+        public string Version
         {
-            get { return this.vrsn; }
-            set { this.vrsn = value; }
+            get { return this.version; }
+            set { this.version = value; }
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace DPXReader
         private Guid id;
 
         /// <summary>
-        /// The img data.
+        /// The img pages.
         /// </summary>
         private string img;
 
@@ -28,7 +28,7 @@ namespace DPXReader
         /// Initializes a new instance of the <see cref="ImageData"/> class.
         /// </summary>
         /// <param name="id">The id value.</param>
-        /// <param name="img">The img data.</param>
+        /// <param name="img">The img pages.</param>
         public ImageData(Guid id, string img)
         {
             this.id = id;
@@ -39,7 +39,7 @@ namespace DPXReader
         /// Initializes a new instance of the <see cref="ImageData"/> class.
         /// </summary>
         /// <param name="id">The id value.</param>
-        /// <param name="img">The img data.</param>
+        /// <param name="img">The img pages.</param>
         public ImageData(string id, string img)
         {
             this.id = new Guid(id);
@@ -59,14 +59,14 @@ namespace DPXReader
         /// <summary>
         /// Gets the img.
         /// </summary>
-        /// <value>The img data.</value>
+        /// <value>The img pages.</value>
         public string Img
         {
             get { return this.img; }
         }
 
         /// <summary>
-        /// Gets the image data string64.
+        /// Gets the image pages string64.
         /// </summary>
         /// <returns>A string64 representation of the image.</returns>
         public string GetImageDataString64()
@@ -75,10 +75,10 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String"/> that represents this instance.
+        /// A <see cref="string"/> that represents this instance.
         /// </returns>
         public override string ToString()
         {

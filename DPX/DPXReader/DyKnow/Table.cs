@@ -1,4 +1,4 @@
-﻿// <copyright file="Tble.cs" company="University of Louisville Speed School of Engineering">
+﻿// <copyright file="Table.cs" company="University of Louisville Speed School of Engineering">
 // GNU General Public License v3
 // </copyright>
 // <summary>The representation of a tble.</summary>
@@ -12,9 +12,9 @@ namespace DPXReader.DyKnow
     using System.Xml.Serialization;
 
     /// <summary>
-    /// The representation of a tble.
+    /// The representation of a Table.
     /// </summary>
-    public class Tble
+    public class Table
     {
         /// <summary>
         /// The cr value.
@@ -42,14 +42,14 @@ namespace DPXReader.DyKnow
         private string ep;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -57,19 +57,19 @@ namespace DPXReader.DyKnow
         private Guid uid;
 
         /// <summary>
-        /// The nrow value.
+        /// The numRows value.
         /// </summary>
-        private int nrow;
+        private int numRows;
 
         /// <summary>
-        /// The ncol value.
+        /// The numColumns value.
         /// </summary>
-        private int ncol;
+        private int numColumns;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Tble"/> class.
         /// </summary>
-        public Tble()
+        public Table()
         {
         }
 
@@ -129,25 +129,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -162,25 +162,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the NROW.
+        /// Gets or sets the RowCount.
         /// </summary>
-        /// <value>The NROW value.</value>
+        /// <value>The RowCount value.</value>
         [XmlAttribute("NROW")]
-        public int NROW
+        public int RowCount
         {
-            get { return this.nrow; }
-            set { this.nrow = value; }
+            get { return this.numRows; }
+            set { this.numRows = value; }
         }
 
         /// <summary>
-        /// Gets or sets the NCOL.
+        /// Gets or sets the ColumnCount.
         /// </summary>
-        /// <value>The NCOL value.</value>
+        /// <value>The ColumnCount value.</value>
         [XmlAttribute("NCOL")]
-        public int NCOL
+        public int ColumnCount
         {
-            get { return this.ncol; }
-            set { this.ncol = value; }
+            get { return this.numColumns; }
+            set { this.numColumns = value; }
         }
     }
 }

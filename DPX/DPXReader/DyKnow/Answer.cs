@@ -18,14 +18,14 @@ namespace DPXReader.DyKnow
     public class Answer
     {
         /// <summary>
-        /// The shrt value.
+        /// The shortAnswer value.
         /// </summary>
-        private string shrt;
+        private string shortAnswer;
 
         /// <summary>
-        /// The lng value.
+        /// The longAnswer value.
         /// </summary>
-        private string lng;
+        private string longAnswer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Answer"/> class.
@@ -35,25 +35,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the SHRT.
+        /// Gets or sets the ShortAnswer.
         /// </summary>
-        /// <value>The SHRT value.</value>
+        /// <value>The ShortAnswer value.</value>
         [XmlAttribute("SHRT")]
-        public string SHRT
+        public string ShortAnswer
         {
-            get { return this.shrt; }
-            set { this.shrt = value; }
+            get { return this.shortAnswer; }
+            set { this.shortAnswer = value; }
         }
 
         /// <summary>
-        /// Gets or sets the LNG.
+        /// Gets or sets the LongAnswer.
         /// </summary>
-        /// <value>The LNG value.</value>
+        /// <value>The LongAnswer value.</value>
         [XmlAttribute("LNG")]
-        public string LNG
+        public string LongAnswer
         {
-            get { return this.lng; }
-            set { this.lng = value; }
+            get { return this.longAnswer; }
+            set { this.longAnswer = value; }
         }
     }
 }

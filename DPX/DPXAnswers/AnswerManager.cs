@@ -211,7 +211,7 @@ namespace DPXAnswers
         /// <param name="n">The panel to display.</param>
         internal void DisplayPanel(int n)
         {
-            if (this.dyknow != null && n >= 0 && n < this.dyknow.DATA.Count)
+            if (this.dyknow != null && n >= 0 && n < this.dyknow.Pages.Count)
             {
                 if (this.answerWindow.SelectedPanelId >= 0)
                 {
@@ -227,8 +227,8 @@ namespace DPXAnswers
                 }
 
                 this.dyknow.Render(this.answerWindow.Inky, n);
-                string oner = (this.dyknow.DATA[n] as DPXReader.DyKnow.Page).ONER;
-                string onern = (this.dyknow.DATA[n] as DPXReader.DyKnow.Page).ONERN;
+                string oner = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONER;
+                string onern = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONERN;
                 if (oner != null)
                 {
                     this.answerWindow.TextBoxStudentName.Text = onern;
@@ -506,7 +506,7 @@ namespace DPXAnswers
 
             foreach (KeyValuePair<int, PanelAnswer> pa in this.answers)
             {
-                DPXReader.DyKnow.Page p = this.dyknow.DATA[pa.Key] as DPXReader.DyKnow.Page;
+                DPXReader.DyKnow.Page p = this.dyknow.Pages[pa.Key] as DPXReader.DyKnow.Page;
                 sb.Append("\n" + (pa.Key + 1) + ",\"" + p.ONER + "\",\"" + p.ONERN + "\"");
                 foreach (AnswerRect r in boxes)
                 {

@@ -1,4 +1,4 @@
-﻿// <copyright file="Abox.cs" company="University of Louisville Speed School of Engineering">
+﻿// <copyright file="AnswerBox.cs" company="University of Louisville Speed School of Engineering">
 // GNU General Public License v3
 // </copyright>
 // <summary>The abox object.</summary>
@@ -16,7 +16,7 @@ namespace DPXReader.DyKnow
     /// The abox object.
     /// </summary>
     [XmlRoot("ABOX")]
-    public class Abox
+    public class AnswerBox
     {
         /// <summary>
         /// The cr value.
@@ -44,14 +44,14 @@ namespace DPXReader.DyKnow
         private string ep;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -61,7 +61,7 @@ namespace DPXReader.DyKnow
         /// <summary>
         /// Initializes a new instance of the <see cref="Abox"/> class.
         /// </summary>
-        public Abox()
+        public AnswerBox()
         {
         }
 
@@ -121,25 +121,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace DPXReader.DyKnow
         /// <returns>The adjusted distance from the top.</returns>
         internal double ActualTopPosition(double height)
         {
-            return this.CustomPositionTop * height / (double)this.PH;
+            return this.CustomPositionTop * height / (double)this.PageHeight;
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace DPXReader.DyKnow
         /// <returns>The adjusted distance from the left.</returns>
         internal double ActualLeftPosition(double width)
         {
-            return this.CustomPositionLeft * width / (double)this.PW;
+            return this.CustomPositionLeft * width / (double)this.PageWidth;
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace DPXReader.DyKnow
         /// <returns>The adjusted width of the box.</returns>
         internal double ActualHeight(double height)
         {
-            return (this.CustomHeight * height / (double)this.PH) - this.ActualTopPosition(height);
+            return (this.CustomHeight * height / (double)this.PageHeight) - this.ActualTopPosition(height);
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace DPXReader.DyKnow
         /// <returns>The adjusted height of the box.</returns>
         internal double ActualWidth(double width)
         {
-            return (this.CustomWidth * width / (double)this.PW) - this.ActualLeftPosition(width);
+            return (this.CustomWidth * width / (double)this.PageWidth) - this.ActualLeftPosition(width);
         }
     }
 }

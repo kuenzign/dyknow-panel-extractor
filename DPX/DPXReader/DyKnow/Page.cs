@@ -23,7 +23,7 @@ namespace DPXReader.DyKnow
         /// <summary>
         /// The page version number.
         /// </summary>
-        private string vrsn;
+        private string version;
 
         /// <summary>
         /// The uid value.
@@ -56,9 +56,9 @@ namespace DPXReader.DyKnow
         private string onern;
 
         /// <summary>
-        /// The animlist list of objects.
+        /// The animations list of objects.
         /// </summary>
-        private ArrayList animlist;
+        private ArrayList animations;
 
         /// <summary>
         /// The txtmodecontentsmod value.
@@ -81,9 +81,9 @@ namespace DPXReader.DyKnow
         private FlowDocument txtmodepartxaml;
 
         /// <summary>
-        /// The olst list of objects.
+        /// The objects list of objects.
         /// </summary>
-        private ArrayList olst;
+        private ArrayList objects;
 
         /// <summary>
         /// The ulst object.
@@ -105,22 +105,22 @@ namespace DPXReader.DyKnow
         /// </summary>
         public Page()
         {
-            this.animlist = new ArrayList();
-            this.olst = new ArrayList();
+            this.animations = new ArrayList();
+            this.objects = new ArrayList();
             this.ulst = null;
             this.nlst = null;
             this.mrgn = null;
         }
 
         /// <summary>
-        /// Gets or sets the VRSN.
+        /// Gets or sets the Version.
         /// </summary>
-        /// <value>The VRSN value.</value>
+        /// <value>The Version value.</value>
         [XmlAttribute("VRSN")]
-        public string VRSN
+        public string Version
         {
-            get { return this.vrsn; }
-            set { this.vrsn = value; }
+            get { return this.version; }
+            set { this.version = value; }
         }
 
         /// <summary>
@@ -190,15 +190,15 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the ANIMLIST.
+        /// Gets or sets the Animations.
         /// </summary>
-        /// <value>The ANIMLIST value.</value>
+        /// <value>The Animations value.</value>
         [XmlArray("ANIMLIST")]
         [XmlArrayItem("A", typeof(Animation), IsNullable = true)]
-        public ArrayList ANIMLIST
+        public ArrayList Animations
         {
-            get { return this.animlist; }
-            set { this.animlist = value; }
+            get { return this.animations; }
+            set { this.animations = value; }
         }
 
         /// <summary>
@@ -300,12 +300,12 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the OLST.
+        /// Gets or sets the Objects.
         /// </summary>
-        /// <value>The OLST list of objects.</value>
+        /// <value>The Objects list of objects.</value>
         [XmlArray("OLST")]
         [XmlArrayItem("PEN", typeof(Pen), IsNullable = true)]
-        [XmlArrayItem("IMG", typeof(Img), IsNullable = true)]
+        [XmlArrayItem("IMG", typeof(Image), IsNullable = true)]
         [XmlArrayItem("GRP", typeof(Group), IsNullable = true)]
         [XmlArrayItem("DEOB", typeof(Deob), IsNullable = true)]
         [XmlArrayItem("EDOB", typeof(Edob), IsNullable = true)]
@@ -313,13 +313,13 @@ namespace DPXReader.DyKnow
         [XmlArrayItem("RTEXT", typeof(Rtext), IsNullable = true)]
         [XmlArrayItem("LINK", typeof(Link), IsNullable = true)]
         [XmlArrayItem("EPOLL", typeof(Epoll), IsNullable = true)]
-        [XmlArrayItem("ABOX", typeof(Abox), IsNullable = true)]
-        [XmlArrayItem("TBLE", typeof(Tble), IsNullable = true)]
+        [XmlArrayItem("ABOX", typeof(AnswerBox), IsNullable = true)]
+        [XmlArrayItem("TBLE", typeof(Table), IsNullable = true)]
         [XmlArrayItem("PGNAV", typeof(Pgnav), IsNullable = true)]
-        public ArrayList OLST
+        public ArrayList Objects
         {
-            get { return this.olst; }
-            set { this.olst = value; }
+            get { return this.objects; }
+            set { this.objects = value; }
         }
 
         /// <summary>
@@ -367,11 +367,11 @@ namespace DPXReader.DyKnow
             get
             {
                 ArrayList arr = new ArrayList();
-                for (int i = 0; i < this.olst.Count; i++)
+                for (int i = 0; i < this.objects.Count; i++)
                 {
-                    if (this.olst[i].GetType().Equals(typeof(Img)))
+                    if (this.objects[i].GetType().Equals(typeof(Image)))
                     {
-                        arr.Add(this.olst[i]);
+                        arr.Add(this.objects[i]);
                     }
                 }
 
@@ -389,11 +389,11 @@ namespace DPXReader.DyKnow
             get
             {
                 ArrayList arr = new ArrayList();
-                for (int i = 0; i < this.olst.Count; i++)
+                for (int i = 0; i < this.objects.Count; i++)
                 {
-                    if (this.olst[i].GetType().Equals(typeof(Pen)))
+                    if (this.objects[i].GetType().Equals(typeof(Pen)))
                     {
-                        arr.Add(this.olst[i]);
+                        arr.Add(this.objects[i]);
                     }
                 }
 
@@ -411,11 +411,11 @@ namespace DPXReader.DyKnow
             get
             {
                 ArrayList arr = new ArrayList();
-                for (int i = 0; i < this.olst.Count; i++)
+                for (int i = 0; i < this.objects.Count; i++)
                 {
-                    if (this.olst[i].GetType().Equals(typeof(Abox)))
+                    if (this.objects[i].GetType().Equals(typeof(AnswerBox)))
                     {
-                        arr.Add(this.olst[i]);
+                        arr.Add(this.objects[i]);
                     }
                 }
 
@@ -430,11 +430,11 @@ namespace DPXReader.DyKnow
         /// <returns><c>true</c> if specified object is deleted; otherwise, <c>false</c>.</returns>
         internal bool IsObjectDeleted(Guid id)
         {
-            for (int i = 0; i < this.olst.Count; i++)
+            for (int i = 0; i < this.objects.Count; i++)
             {
-                if (this.olst[i].GetType().Equals(typeof(Deob)))
+                if (this.objects[i].GetType().Equals(typeof(Deob)))
                 {
-                    Deob d = this.olst[i] as Deob;
+                    Deob d = this.objects[i] as Deob;
                     if (d.Contains(id))
                     {
                         return true;

@@ -48,7 +48,7 @@ namespace DPXReader
         private List<DyKnowPage> dyknowPages;
 
         /// <summary>
-        /// The collection of DyKnow background image data.
+        /// The collection of DyKnow background image pages.
         /// </summary>
         private List<ImageData> imageInformation;
 
@@ -63,12 +63,12 @@ namespace DPXReader
         private double stdDevStrokes;
 
         /// <summary>
-        /// The mean storke data.
+        /// The mean stroke pages.
         /// </summary>
         private double meanStrokeDistance;
 
         /// <summary>
-        /// The standard deviation of the stroke data.
+        /// The standard deviation of the stroke pages.
         /// </summary>
         private double stdDevStrokeDistance;
 
@@ -93,7 +93,7 @@ namespace DPXReader
             // The collection of pages
             this.dyknowPages = new List<DyKnowPage>();
 
-            // The collection of inmageData
+            // The collection of imageData
             this.imageInformation = new List<ImageData>();
 
             // Some more default values
@@ -320,10 +320,10 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Gets the image data for a specific uid.
+        /// Gets the image pages for a specific uid.
         /// </summary>
-        /// <param name="uid">The uid to location image data for.</param>
-        /// <returns>The image data.</returns>
+        /// <param name="uid">The uid to location image pages for.</param>
+        /// <returns>The image pages.</returns>
         public ImageData GetImageData(Guid uid)
         {
             for (int i = 0; i < this.imageInformation.Count; i++)
@@ -382,10 +382,10 @@ namespace DPXReader
                 bi.EndInit();
 
                 // Sets do some complicated math to get the position and scale factors for the image
-                double scaleW = ((dki[i].ImageWidth * inky.Width) / bi.Width) * (inky.Width / dki[i].Pw);
-                double scaleH = ((dki[i].ImageHeight * inky.Height) / bi.Height) * (inky.Height / dki[i].Ph);
-                double left = dki[i].PositionLeft * inky.Width * inky.Width / dki[i].Pw;
-                double top = dki[i].PositionTop * inky.Height * inky.Height / dki[i].Ph;
+                double scaleW = ((dki[i].ImageWidth * inky.Width) / bi.Width) * (inky.Width / dki[i].PageWidth);
+                double scaleH = ((dki[i].ImageHeight * inky.Height) / bi.Height) * (inky.Height / dki[i].PageHeight);
+                double left = dki[i].PositionLeft * inky.Width * inky.Width / dki[i].PageWidth;
+                double top = dki[i].PositionTop * inky.Height * inky.Height / dki[i].PageHeight;
 
                 // Allows for independent canvas sizes. (Not sure why this was necessary...)
                 scaleW = scaleW * 1024 / inky.Width;
@@ -402,8 +402,10 @@ namespace DPXReader
                 tb.EndInit();
 
                 // Add the image to the canvas
-                Image im = new Image();
-                im.Source = tb;
+                Image im = new Image
+                {
+                    Source = tb
+                };
                 inky.Children.Add(im);
 
                 // Set the position on the canvas
@@ -418,10 +420,10 @@ namespace DPXReader
             for (int i = 0; i < pens.Count; i++)
             {
                 // Only display the ink if it wasn't deleted
-                if (!pens[i].DELETED)
+                if (!pens[i].IsDeleted)
                 {
-                    // The data is encoded as a string
-                    string data = pens[i].DATA;
+                    // The pages is encoded as a string
+                    string data = pens[i].Data;
 
                     // Truncate off the "base64:" from the beginning of the string
                     data = data.Substring(7);
@@ -436,10 +438,10 @@ namespace DPXReader
                     StrokeCollection sc = new StrokeCollection(s);
 
                     // Resize the panel if it is not the default resolution
-                    if (pens[i].PH != inky.Height || pens[i].PW != inky.Width)
+                    if (pens[i].PageHeight != inky.Height || pens[i].PageWidth != inky.Width)
                     {
                         Matrix inkTransform = new Matrix();
-                        inkTransform.Scale(inky.Width / (double)pens[i].PW, inky.Height / (double)pens[i].PH);
+                        inkTransform.Scale(inky.Width / (double)pens[i].PageWidth, inky.Height / (double)pens[i].PageHeight);
                         sc.Transform(inkTransform, true);
                     }
 
@@ -460,7 +462,7 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Gets the row data for the requested page..
+        /// Gets the row pages for the requested page..
         /// </summary>
         /// <param name="i">The requested page.</param>
         /// <returns>An object array for the requested page.</returns>
@@ -493,7 +495,7 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Parses the IMGD.
+        /// Parses the ImageIDs.
         /// </summary>
         /// <param name="subfile">The subfile.</param>
         private void ParseIMGD(XmlReader subfile)
@@ -565,9 +567,9 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Performs the calculation to determine the mean stroke data distance per page in this specific file.
+        /// Performs the calculation to determine the mean stroke pages distance per page in this specific file.
         /// </summary>
-        /// <returns>The mean stroke data length.</returns>
+        /// <returns>The mean stroke pages length.</returns>
         private double CalcMeanStrokeDistance()
         {
             long total = 0;
@@ -580,10 +582,10 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Performs the calculation to determine the standard deviation of the stroke data distance per page in this specific file.
+        /// Performs the calculation to determine the standard deviation of the stroke pages distance per page in this specific file.
         /// </summary>
-        /// <param name="mean">The mean stroke data length.</param>
-        /// <returns>The standard deviation of the stroke data length.</returns>
+        /// <param name="mean">The mean stroke pages length.</param>
+        /// <returns>The standard deviation of the stroke pages length.</returns>
         private double CalcStdDevStrokeDistance(double mean)
         {
             double total = 0;
@@ -596,9 +598,9 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Parses the IMGS.
+        /// Parses the Images.
         /// </summary>
-        /// <param name="subfile">The data to parse.</param>
+        /// <param name="subfile">The pages to parse.</param>
         private void ParseIMGS(XmlReader subfile)
         {
             while (subfile.Read())

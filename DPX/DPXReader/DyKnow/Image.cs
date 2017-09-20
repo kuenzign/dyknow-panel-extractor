@@ -1,4 +1,4 @@
-﻿// <copyright file="Img.cs" company="University of Louisville Speed School of Engineering">
+﻿// <copyright file="Image.cs" company="University of Louisville Speed School of Engineering">
 // GNU General Public License v3
 // </copyright>
 // <summary>The reference to an image contained on a panel.</summary>
@@ -15,7 +15,7 @@ namespace DPXReader.DyKnow
     /// The reference to an image contained on a panel.
     /// </summary>
     [XmlRoot("IMG")]
-    public class Img
+    public class Image
     {
         /// <summary>
         /// The reference width used to transform the image dimensions.
@@ -38,14 +38,14 @@ namespace DPXReader.DyKnow
         private string sp;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -58,48 +58,48 @@ namespace DPXReader.DyKnow
         private Guid id;
 
         /// <summary>
-        /// The wid value.
+        /// The width value.
         /// </summary>
-        private int wid;
+        private int width;
 
         /// <summary>
-        /// The hei value.
+        /// The height value.
         /// </summary>
-        private int hei;
+        private int height;
 
         /// <summary>
-        /// The slidetxt value;
+        /// The slideText value;
         /// </summary>
-        private string slidetxt;
+        private string slideText;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Img"/> class.
+        /// Initializes a new instance of the <see cref="Image"/> class.
         /// </summary>
-        public Img()
+        public Image()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Img"/> class.
+        /// Initializes a new instance of the <see cref="Image"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pw">The pageWidth value.</param>
+        /// <param name="ph">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="id">The id value.</param>
-        /// <param name="wid">The wid value.</param>
-        /// <param name="hei">The hei value.</param>
-        public Img(int ut, string sp, int pw, int ph, Guid uid, Guid id, int wid, int hei)
+        /// <param name="wid">The width value.</param>
+        /// <param name="hei">The height value.</param>
+        public Image(int ut, string sp, int pw, int ph, Guid uid, Guid id, int wid, int hei)
         {
             this.ut = ut;
             this.sp = sp;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pw;
+            this.pageHeight = ph;
             this.uid = uid;
             this.id = id;
-            this.wid = wid;
-            this.hei = hei;
+            this.width = wid;
+            this.height = hei;
         }
 
         /// <summary>
@@ -125,25 +125,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -169,36 +169,36 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the WID.
+        /// Gets or sets the Width.
         /// </summary>
-        /// <value>The WID value.</value>
+        /// <value>The Width value.</value>
         [XmlAttribute("WID")]
-        public int WID
+        public int Width
         {
-            get { return this.wid; }
-            set { this.wid = value; }
+            get { return this.width; }
+            set { this.width = value; }
         }
 
         /// <summary>
-        /// Gets or sets the HEI.
+        /// Gets or sets the Height.
         /// </summary>
-        /// <value>The HEI value.</value>
+        /// <value>The Height value.</value>
         [XmlAttribute("HEI")]
-        public int HEI
+        public int Height
         {
-            get { return this.hei; }
-            set { this.hei = value; }
+            get { return this.height; }
+            set { this.height = value; }
         }
 
         /// <summary>
-        /// Gets or sets the SLIDETXT.
+        /// Gets or sets the SlideText.
         /// </summary>
-        /// <value>The SLIDETXT.</value>
+        /// <value>The SlideText.</value>
         [XmlElement("SLIDETXT")]
-        public string SLIDETXT
+        public string SlideText
         {
-            get { return this.slidetxt; }
-            set { this.slidetxt = value; }
+            get { return this.slideText; }
+            set { this.slideText = value; }
         }
 
         // Custom, non serialized attributes
@@ -210,7 +210,7 @@ namespace DPXReader.DyKnow
         [XmlIgnore]
         internal double CustomImageWidth
         {
-            get { return (double)this.wid / (double)Img.ReferenceWidth; }
+            get { return (double)this.width / (double)Image.ReferenceWidth; }
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace DPXReader.DyKnow
         [XmlIgnore]
         internal double CustomImageHeight
         {
-            get { return (double)this.hei / (double)Img.ReferenceHeight; }
+            get { return (double)this.height / (double)Image.ReferenceHeight; }
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace DPXReader.DyKnow
                 int end = this.sp.IndexOf(':');
                 string val = this.sp.Substring(start, end);
                 double num = int.Parse(val);
-                return num / Img.ReferenceWidth;
+                return num / Image.ReferenceWidth;
             }
         }
 
@@ -252,7 +252,7 @@ namespace DPXReader.DyKnow
                 int start = this.sp.IndexOf(':') + 1;
                 string val = this.sp.Substring(start);
                 double num = int.Parse(val);
-                return num / Img.ReferenceHeight;
+                return num / Image.ReferenceHeight;
             }
         }
     }

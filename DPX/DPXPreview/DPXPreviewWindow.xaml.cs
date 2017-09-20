@@ -99,7 +99,7 @@ namespace DPXPreview
         {
             if (this.dyknow != null)
             {
-                if ((this.currentPanelNumber + 1) < this.dyknow.DATA.Count)
+                if ((this.currentPanelNumber + 1) < this.dyknow.Pages.Count)
                 {
                     Dispatcher.BeginInvoke(new DisplayPanelDelegate(this.DisplayPanel), DispatcherPriority.Input, (this.currentPanelNumber + 1));
                 }
@@ -150,11 +150,11 @@ namespace DPXPreview
         /// <param name="n">The panel number.</param>
         private void DisplayPanel(int n)
         {
-            if (this.dyknow != null && n >= 0 && n < this.dyknow.DATA.Count)
+            if (this.dyknow != null && n >= 0 && n < this.dyknow.Pages.Count)
             {
                 this.currentPanelNumber = n;
                 this.dyknow.Render(Inky, n);
-                labelPageNumber.Content = (n + 1).ToString() + " of " + this.dyknow.DATA.Count;
+                labelPageNumber.Content = (n + 1).ToString() + " of " + this.dyknow.Pages.Count;
 
                 // Enable or disable the previous button as necessary
                 if (n == 0)
@@ -167,7 +167,7 @@ namespace DPXPreview
                 }
 
                 // Enable or disable the next button as necessary
-                if (n + 1 == this.dyknow.DATA.Count)
+                if (n + 1 == this.dyknow.Pages.Count)
                 {
                     this.buttonNext.IsEnabled = false;
                 }

@@ -1,7 +1,7 @@
 ﻿// <copyright file="Group.cs" company="University of Louisville Speed School of Engineering">
 // GNU General Public License v3
 // </copyright>
-// <summary>The group information for the page data.</summary>
+// <summary>The group information for the page pages.</summary>
 namespace DPXReader.DyKnow
 {
     using System;
@@ -12,7 +12,7 @@ namespace DPXReader.DyKnow
     using System.Xml.Serialization;
 
     /// <summary>
-    /// The group information for the page data.
+    /// The group information for the page pages.
     /// </summary>
     [XmlRoot("GRP")]
     public class Group
@@ -23,14 +23,14 @@ namespace DPXReader.DyKnow
         private int ut;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The gtyp value.
@@ -48,14 +48,14 @@ namespace DPXReader.DyKnow
         /// Initializes a new instance of the <see cref="Group"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pageWidth">The pageWidth value.</param>
+        /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="gtyp">The gtyp value.</param>
-        public Group(int ut, int pw, int ph, string gtyp)
+        public Group(int ut, int pageWidth, int pageHeight, string gtyp)
         {
             this.ut = ut;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pageWidth;
+            this.pageHeight = pageHeight;
             this.gtyp = gtyp;
         }
 
@@ -71,25 +71,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>

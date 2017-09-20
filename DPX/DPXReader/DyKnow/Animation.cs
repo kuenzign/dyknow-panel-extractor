@@ -23,14 +23,14 @@ namespace DPXReader.DyKnow
         private int ut;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -43,9 +43,9 @@ namespace DPXReader.DyKnow
         private Guid tb;
 
         /// <summary>
-        /// The typ value.
+        /// The type value.
         /// </summary>
-        private int typ;
+        private int type;
 
         /// <summary>
         /// The par value.
@@ -53,9 +53,9 @@ namespace DPXReader.DyKnow
         private int par;
 
         /// <summary>
-        /// The lvl value.
+        /// The level value.
         /// </summary>
-        private int lvl;
+        private int level;
 
         /// <summary>
         /// The xaml value.
@@ -73,23 +73,23 @@ namespace DPXReader.DyKnow
         /// Initializes a new instance of the <see cref="Animation"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pageWidth">The pageWidth value.</param>
+        /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="tb">The tb value.</param>
-        /// <param name="typ">The typ value.</param>
+        /// <param name="type">The type value.</param>
         /// <param name="par">The par value.</param>
-        /// <param name="lvl">The LVL value.</param>
-        public Animation(int ut, int pw, int ph, Guid uid, Guid tb, int typ, int par, int lvl)
+        /// <param name="level">The Level value.</param>
+        public Animation(int ut, int pageWidth, int pageHeight, Guid uid, Guid tb, int type, int par, int level)
         {
             this.ut = ut;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pageWidth;
+            this.pageHeight = pageHeight;
             this.uid = uid;
             this.tb = tb;
-            this.typ = typ;
+            this.type = type;
             this.par = par;
-            this.lvl = lvl;
+            this.level = level;
         }
 
         /// <summary>
@@ -104,25 +104,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -148,14 +148,14 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the TYP.
+        /// Gets or sets the Type.
         /// </summary>
-        /// <value>The TYP value.</value>
+        /// <value>The Type value.</value>
         [XmlAttribute("TYP")]
-        public int TYP
+        public int Type
         {
-            get { return this.typ; }
-            set { this.typ = value; }
+            get { return this.type; }
+            set { this.type = value; }
         }
 
         /// <summary>
@@ -170,14 +170,14 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the LVL.
+        /// Gets or sets the Level.
         /// </summary>
-        /// <value>The LVL value.</value>
+        /// <value>The Level value.</value>
         [XmlAttribute("LVL")]
-        public int LVL
+        public int Level
         {
-            get { return this.lvl; }
-            set { this.lvl = value; }
+            get { return this.level; }
+            set { this.level = value; }
         }
 
         /// <summary>

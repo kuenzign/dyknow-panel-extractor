@@ -168,7 +168,7 @@ namespace DPXAnswers
 
             // Read in the file
             DyKnow dyknow = this.answerManager.OpenFile(file);
-            int goal = dyknow.DATA.Count * 2;
+            int goal = dyknow.Pages.Count * 2;
 
             // Set the progress bar to zero
             Dispatcher.Invoke(
@@ -177,7 +177,7 @@ namespace DPXAnswers
                 goal);
 
             // Display the first panel
-            if (dyknow.DATA.Count > 0)
+            if (dyknow.Pages.Count > 0)
             {
                 this.answerManager.ProcessPanelAnswers(0);
                 Dispatcher.Invoke(new DisplayPanelDelegate(this.answerManager.DisplayPanel), DispatcherPriority.Input, 0);
@@ -185,7 +185,7 @@ namespace DPXAnswers
             }
 
             // Loop through all of the panels
-            for (int i = 0; i < dyknow.DATA.Count; i++)
+            for (int i = 0; i < dyknow.Pages.Count; i++)
             {
                 // Process the panels answer boxes
                 if (i > 0)

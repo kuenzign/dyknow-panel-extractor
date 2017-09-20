@@ -431,20 +431,20 @@ namespace DPXGrader
 
             // Read in the file
             this.dyknow = DyKnow.DeserializeFromFile(file);
-            int goal = this.dyknow.DATA.Count + 1;
+            int goal = this.dyknow.Pages.Count + 1;
 
             // Set up the progress bar.
             Dispatcher.Invoke(new UpdateProgressBarDelegate(this.UpdateOpenProgressBar), DispatcherPriority.Input, 1, goal);
 
             // Display the first panel
-            if (this.dyknow.DATA.Count > 0)
+            if (this.dyknow.Pages.Count > 0)
             {
                 Dispatcher.Invoke(new DisplayPanelDelegate(this.DisplayPanel), DispatcherPriority.Input, 0);
                 this.selectedPanelId = 0;
             }
 
             // Render and add all of the thumbnails
-            for (int i = 0; i < this.dyknow.DATA.Count; i++)
+            for (int i = 0; i < this.dyknow.Pages.Count; i++)
             {
                 ThumbnailQueueItem tqi = new ThumbnailQueueItem(this, i);
                 Dispatcher.BeginInvoke(new NoArgsDelegate(tqi.Run), DispatcherPriority.Background);
@@ -497,12 +497,12 @@ namespace DPXGrader
         /// <param name="n">The panel to display.</param>
         private void DisplayPanel(int n)
         {
-            if (this.dyknow != null && n >= 0 && n < this.dyknow.DATA.Count)
+            if (this.dyknow != null && n >= 0 && n < this.dyknow.Pages.Count)
             {
                 this.selectedPanelId = n;
                 this.dyknow.Render(this.Inky, n);
-                string oner = (this.dyknow.DATA[n] as DPXReader.DyKnow.Page).ONER;
-                string onern = (this.dyknow.DATA[n] as DPXReader.DyKnow.Page).ONERN;
+                string oner = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONER;
+                string onern = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONERN;
                 if (oner != null)
                 {
                     this.TextBoxStudentName.Text = onern;
@@ -574,11 +574,11 @@ namespace DPXGrader
         {
             Dispatcher.Invoke(new NoArgsDelegate(this.DisableBoxControls), DispatcherPriority.Normal);
             Dispatcher.Invoke(new NoArgsDelegate(this.ClearResults), DispatcherPriority.Normal);
-            int goal = this.dyknow.DATA.Count;
+            int goal = this.dyknow.Pages.Count;
             Dispatcher.Invoke(new UpdateProgressBarDelegate(this.UpdateProcessProgressBar), DispatcherPriority.Input, 0, goal);
 
             // Add everything to the queue to be processed
-            for (int i = 0; i < this.dyknow.DATA.Count; i++)
+            for (int i = 0; i < this.dyknow.Pages.Count; i++)
             {
                 AnalyzerQueueItem aqi = new AnalyzerQueueItem(this, i);
                 lock (this.workerQueue)

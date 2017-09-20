@@ -33,14 +33,14 @@ namespace DPXReader.DyKnow
         private string ep;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -81,8 +81,8 @@ namespace DPXReader.DyKnow
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
         /// <param name="ep">The ep value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pw">The pageWidth value.</param>
+        /// <param name="ph">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="isrem">if set to <c>true</c> [isrem].</param>
         /// <param name="sti">The sti value.</param>
@@ -92,8 +92,8 @@ namespace DPXReader.DyKnow
             this.ut = ut;
             this.sp = sp;
             this.ep = ep;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pw;
+            this.pageHeight = ph;
             this.uid = uid;
             this.isrem = isrem;
         }
@@ -132,25 +132,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>

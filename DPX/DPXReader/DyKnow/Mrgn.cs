@@ -23,9 +23,9 @@ namespace DPXReader.DyKnow
         private Guid bkgr;
 
         /// <summary>
-        /// The olst list of objects.
+        /// The objects list of objects.
         /// </summary>
-        private ArrayList olst;
+        private ArrayList objects;
 
         /// <summary>
         /// The txtmodecontentsmod value.
@@ -52,7 +52,7 @@ namespace DPXReader.DyKnow
         /// </summary>
         public Mrgn()
         {
-            this.olst = new ArrayList();
+            this.objects = new ArrayList();
             this.txtmodecontentsmod = string.Empty;
             this.txtmodecontentspart = string.Empty;
             this.txtmodemodxaml = string.Empty;
@@ -71,12 +71,12 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the OLST.
+        /// Gets or sets the Objects.
         /// </summary>
-        /// <value>The OLST list of objects.</value>
+        /// <value>The Objects list of objects.</value>
         [XmlArray("OLST")]
         [XmlArrayItem("PEN", typeof(Pen), IsNullable = true)]
-        [XmlArrayItem("IMG", typeof(Img), IsNullable = true)]
+        [XmlArrayItem("IMG", typeof(Image), IsNullable = true)]
         [XmlArrayItem("GRP", typeof(Group), IsNullable = true)]
         [XmlArrayItem("DEOB", typeof(Deob), IsNullable = true)]
         [XmlArrayItem("EDOB", typeof(Edob), IsNullable = true)]
@@ -84,13 +84,13 @@ namespace DPXReader.DyKnow
         [XmlArrayItem("RTEXT", typeof(Rtext), IsNullable = true)]
         [XmlArrayItem("LINK", typeof(Link), IsNullable = true)]
         [XmlArrayItem("EPOLL", typeof(Epoll), IsNullable = true)]
-        [XmlArrayItem("ABOX", typeof(Abox), IsNullable = true)]
-        [XmlArrayItem("TBLE", typeof(Tble), IsNullable = true)]
+        [XmlArrayItem("ABOX", typeof(AnswerBox), IsNullable = true)]
+        [XmlArrayItem("TBLE", typeof(Table), IsNullable = true)]
         [XmlArrayItem("PGNAV", typeof(Pgnav), IsNullable = true)]
-        public ArrayList OLST
+        public ArrayList Objects
         {
-            get { return this.olst; }
-            set { this.olst = value; }
+            get { return this.objects; }
+            set { this.objects = value; }
         }
 
         /// <summary>

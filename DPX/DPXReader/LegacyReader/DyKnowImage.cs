@@ -35,14 +35,14 @@ namespace DPXReader
         private string sp;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -55,12 +55,12 @@ namespace DPXReader
         private Guid id;
 
         /// <summary>
-        /// The wid value.
+        /// The width value.
         /// </summary>
         private int wid;
 
         /// <summary>
-        /// The hei value.
+        /// The height value.
         /// </summary>
         private int hei;
 
@@ -69,18 +69,18 @@ namespace DPXReader
         /// </summary>
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pw">The pageWidth value.</param>
+        /// <param name="ph">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="id">The unique id.</param>
-        /// <param name="wid">The wid value.</param>
-        /// <param name="hei">The hei value.</param>
+        /// <param name="wid">The width value.</param>
+        /// <param name="hei">The height value.</param>
         public DyKnowImage(int ut, string sp, int pw, int ph, string uid, string id, int wid, int hei)
         {
             this.ut = ut;
             this.sp = sp;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pw;
+            this.pageHeight = ph;
             this.uid = new Guid(uid);
             this.id = new Guid(id);
             this.wid = wid;
@@ -92,18 +92,18 @@ namespace DPXReader
         /// </summary>
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pw">The pageWidth value.</param>
+        /// <param name="ph">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="id">The unique id.</param>
-        /// <param name="wid">The wid value.</param>
-        /// <param name="hei">The hei value.</param>
+        /// <param name="wid">The width value.</param>
+        /// <param name="hei">The height value.</param>
         public DyKnowImage(int ut, string sp, int pw, int ph, Guid uid, Guid id, int wid, int hei)
         {
             this.ut = ut;
             this.sp = sp;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pw;
+            this.pageHeight = ph;
             this.uid = uid;
             this.id = id;
             this.wid = wid;
@@ -120,21 +120,21 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Gets the pw.
+        /// Gets the pageWidth.
         /// </summary>
-        /// <value>The pw value.</value>
-        internal int Pw
+        /// <value>The pageWidth value.</value>
+        internal int PageWidth
         {
-            get { return this.pw; }
+            get { return this.pageWidth; }
         }
 
         /// <summary>
-        /// Gets the ph.
+        /// Gets the pageHeight.
         /// </summary>
-        /// <value>The ph value.</value>
-        internal int Ph
+        /// <value>The pageHeight value.</value>
+        internal int PageHeight
         {
-            get { return this.ph; }
+            get { return this.pageHeight; }
         }
 
         /// <summary>

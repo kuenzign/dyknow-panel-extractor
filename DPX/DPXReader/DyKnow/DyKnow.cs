@@ -30,37 +30,37 @@ namespace DPXReader.DyKnow
         private string aid;
 
         /// <summary>
-        /// The vrsn value.
+        /// The version value.
         /// </summary>
-        private string vrsn;
+        private string version;
 
         /// <summary>
-        /// The data list.
+        /// The pages list.
         /// </summary>
-        private ArrayList data;
+        private ArrayList pages;
 
         /// <summary>
-        /// The imgs list.
+        /// The images list.
         /// </summary>
-        private ArrayList imgs;
+        private ArrayList images;
 
         /// <summary>
-        /// The imgd list.
+        /// The imageIds list.
         /// </summary>
-        private ArrayList imgd;
+        private ArrayList imageIds;
 
         /// <summary>
         /// The chat list of objects.
         /// </summary>
-        private ArrayList chats;
+        private ArrayList chatMessages;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DyKnow"/> class.
         /// </summary>
         public DyKnow()
         {
-            this.data = new ArrayList();
-            this.chats = new ArrayList();
+            this.pages = new ArrayList();
+            this.chatMessages = new ArrayList();
         }
 
         /// <summary>
@@ -75,68 +75,68 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the VRSN.
+        /// Gets or sets the Version.
         /// </summary>
-        /// <value>The VRSN value.</value>
+        /// <value>The Version value.</value>
         [XmlAttribute("VRSN")]
-        public string VRSN
+        public string Version
         {
-            get { return this.vrsn; }
-            set { this.vrsn = value; }
+            get { return this.version; }
+            set { this.version = value; }
         }
 
         /// <summary>
-        /// Gets or sets the DATA.
+        /// Gets or sets the Pages.
         /// </summary>
-        /// <value>The DATA list.</value>
+        /// <value>The Pages list.</value>
         [XmlArray("DATA")]
         [XmlArrayItem("PAGE", typeof(Page))]
-        public ArrayList DATA
+        public ArrayList Pages
         {
-            get { return this.data; }
-            set { this.data = value; }
+            get { return this.pages; }
+            set { this.pages = value; }
         }
 
         /// <summary>
-        /// Gets or sets the IMGS.
+        /// Gets or sets the Images.
         /// </summary>
-        /// <value>The IMGS list.</value>
+        /// <value>The Images list.</value>
         [XmlArray("IMGS")]
         [XmlArrayItem("IMG", typeof(string))]
-        public ArrayList IMGS
+        public ArrayList Images
         {
-            get { return this.imgs; }
-            set { this.imgs = value; }
+            get { return this.images; }
+            set { this.images = value; }
         }
 
         /// <summary>
-        /// Gets or sets the IMGD.
+        /// Gets or sets the ImageIDs.
         /// </summary>
-        /// <value>The IMGD list.</value>
+        /// <value>The ImageIDs list.</value>
         [XmlArray("IMGD")]
         [XmlArrayItem("ID", typeof(Guid))]
-        public ArrayList IMGD
+        public ArrayList ImageIDs
         {
-            get { return this.imgd; }
-            set { this.imgd = value; }
+            get { return this.imageIds; }
+            set { this.imageIds = value; }
         }
 
         /// <summary>
-        /// Gets or sets the CHATS.
+        /// Gets or sets the ChatMessages.
         /// </summary>
-        /// <value>The CHATS list of objects.</value>
+        /// <value>The ChatMessages list of objects.</value>
         [XmlArray("CHATS")]
         [XmlArrayItem("MSG", typeof(Message))]
-        public ArrayList CHATS
+        public ArrayList ChatMessages
         {
-            get { return this.chats; }
-            set { this.chats = value; }
+            get { return this.chatMessages; }
+            set { this.chatMessages = value; }
         }
 
         /// <summary>
-        /// Deserializes the specified data.
+        /// Deserializes the specified pages.
         /// </summary>
-        /// <param name="data">The data to deserialize.</param>
+        /// <param name="data">The pages to deserialize.</param>
         /// <returns>The instance of the DyKnow class.</returns>
         public static DyKnow Deserialize(string data)
         {
@@ -157,7 +157,7 @@ namespace DPXReader.DyKnow
             string content = reader.ReadToEnd();
             gzipFile.Close();
             inputFile.Close();
-            return DyKnow.Deserialize(content);
+            return Deserialize(content);
         }
 
         /// <summary>
@@ -167,26 +167,26 @@ namespace DPXReader.DyKnow
         public string Serialize()
         {
             // Remember these arrays
-            ArrayList s = this.imgs;
-            ArrayList d = this.imgd;
+            ArrayList s = this.images;
+            ArrayList d = this.imageIds;
 
             // If the arrays are blank set them to null
-            if (this.imgs != null && this.imgs.Count == 0)
+            if (this.images != null && this.images.Count == 0)
             {
-                this.imgs = null;
+                this.images = null;
             }
 
-            if (this.imgd != null && this.imgd.Count == 0)
+            if (this.imageIds != null && this.imageIds.Count == 0)
             {
-                this.imgd = null;
+                this.imageIds = null;
             }
 
             // Serialize the object
             string str = SerializerHelper.SerializeObject(this, typeof(DyKnow));
 
             // Restore the arrays
-            this.imgs = s;
-            this.imgd = d;
+            this.images = s;
+            this.imageIds = d;
 
             // Return the result
             return str;
@@ -200,7 +200,7 @@ namespace DPXReader.DyKnow
         public void Render(InkCanvas inky, int page)
         {
             // Read in the panel
-            Page dp = this.data[page] as Page;
+            Page dp = this.pages[page] as Page;
 
             // Display all of the images and pen strokes
             inky.Strokes.Clear();
@@ -210,7 +210,7 @@ namespace DPXReader.DyKnow
             ArrayList dki = dp.CustomImages;
             for (int i = 0; i < dki.Count; i++)
             {
-                Img img = dki[i] as Img;
+                Image img = dki[i] as Image;
 
                 // Get the actual image
                 BitmapImage bi = new BitmapImage();
@@ -219,10 +219,10 @@ namespace DPXReader.DyKnow
                 bi.EndInit();
 
                 // Sets do some complicated math to get the position and scale factors for the image
-                double scaleW = ((img.CustomImageWidth * inky.Width) / bi.Width) * (inky.Width / img.PW);
-                double scaleH = ((img.CustomImageHeight * inky.Height) / bi.Height) * (inky.Height / img.PH);
-                double left = img.CustomPositionLeft * inky.Width * inky.Width / img.PW;
-                double top = img.CustomPositionTop * inky.Height * inky.Height / img.PH;
+                double scaleW = ((img.CustomImageWidth * inky.Width) / bi.Width) * (inky.Width / img.PageWidth);
+                double scaleH = ((img.CustomImageHeight * inky.Height) / bi.Height) * (inky.Height / img.PageHeight);
+                double left = img.CustomPositionLeft * inky.Width * inky.Width / img.PageWidth;
+                double top = img.CustomPositionTop * inky.Height * inky.Height / img.PageHeight;
 
                 // Allows for independent canvas sizes. (Not sure why this was necessary...)
                 scaleW = scaleW * 1024 / inky.Width;
@@ -239,8 +239,10 @@ namespace DPXReader.DyKnow
                 tb.EndInit();
 
                 // Add the image to the canvas
-                Image im = new Image();
-                im.Source = tb;
+                System.Windows.Controls.Image im = new System.Windows.Controls.Image
+                {
+                    Source = tb
+                };
                 inky.Children.Add(im);
 
                 // Set the position on the canvas
@@ -252,9 +254,11 @@ namespace DPXReader.DyKnow
             ArrayList aboxes = dp.AnswerBoxes;
             for (int i = 0; i < aboxes.Count; i++)
             {
-                Abox abox = aboxes[i] as Abox;
-                Rectangle r = new Rectangle();
-                r.Fill = Brushes.LightGray;
+                AnswerBox abox = aboxes[i] as AnswerBox;
+                Rectangle r = new Rectangle
+                {
+                    Fill = Brushes.LightGray
+                };
                 double left = abox.ActualLeftPosition(inky.Width);
                 double top = abox.ActualTopPosition(inky.Height);
                 r.Width = abox.ActualWidth(inky.Width);
@@ -275,8 +279,8 @@ namespace DPXReader.DyKnow
                 // Only display the ink if it wasn't deleted
                 if (!dp.IsObjectDeleted(p.UID))
                 {
-                    // The data is encoded as a string
-                    string data = p.DATA;
+                    // The pages is encoded as a string
+                    string data = p.Data;
 
                     // Truncate off the "base64:" from the beginning of the string
                     data = data.Substring(7);
@@ -292,10 +296,10 @@ namespace DPXReader.DyKnow
                     s.Close();
 
                     // Resize the panel if it is not the default resolution
-                    if (p.PH != inky.Height || p.PW != inky.Width)
+                    if (p.PageHeight != inky.Height || p.PageWidth != inky.Width)
                     {
                         Matrix inkTransform = new Matrix();
-                        inkTransform.Scale(inky.Width / (double)p.PW, inky.Height / (double)p.PH);
+                        inkTransform.Scale(inky.Width / (double)p.PageWidth, inky.Height / (double)p.PageHeight);
                         sc.Transform(inkTransform, true);
                     }
 
@@ -313,17 +317,21 @@ namespace DPXReader.DyKnow
         /// <param name="height">The height of the original InkCanvas.</param>
         /// <param name="factor">The factor to reduce the image by.</param>
         /// <returns>The rendered thumbnail as an image.</returns>
-        public Image GetThumbnail(int page, double width, double height, double factor)
+        public System.Windows.Controls.Image GetThumbnail(int page, double width, double height, double factor)
         {
-            InkCanvas ink = new InkCanvas();
-            ink.Width = width;
-            ink.Height = height;
+            InkCanvas ink = new InkCanvas
+            {
+                Width = width,
+                Height = height
+            };
             this.Render(ink, page);
             RenderTargetBitmap rtb = new RenderTargetBitmap(Convert.ToInt32(ink.Width), Convert.ToInt32(ink.Height), 96d, 96d, PixelFormats.Default);
             rtb.Render(ink);
             TransformedBitmap tb = new TransformedBitmap(rtb, new ScaleTransform(factor, factor));
-            Image myImage = new Image();
-            myImage.Source = tb;
+            System.Windows.Controls.Image myImage = new System.Windows.Controls.Image
+            {
+                Source = tb
+            };
             return myImage;
         }
 
@@ -335,33 +343,37 @@ namespace DPXReader.DyKnow
         /// <param name="height">The panel height.</param>
         /// <param name="rect">The rectangle.</param>
         /// <returns>The image of the answer box.</returns>
-        public Image GetAnswerBoxThumbnail(StrokeCollection strokes, double width, double height, System.Windows.Rect rect)
+        public System.Windows.Controls.Image GetAnswerBoxThumbnail(StrokeCollection strokes, double width, double height, System.Windows.Rect rect)
         {
-            InkCanvas ink = new InkCanvas();
-            ink.Width = width;
-            ink.Height = height;
-            ink.Strokes = strokes;
+            InkCanvas ink = new InkCanvas
+            {
+                Width = width,
+                Height = height,
+                Strokes = strokes
+            };
             RenderTargetBitmap rtb = new RenderTargetBitmap(Convert.ToInt32(ink.Width), Convert.ToInt32(ink.Height), 96d, 96d, PixelFormats.Default);
             rtb.Render(ink);
             System.Windows.Int32Rect intrect = new System.Windows.Int32Rect((int)rect.X, (int)rect.Y, (int)rect.Width, (int)rect.Height);
             CroppedBitmap cb = new CroppedBitmap(rtb, intrect);
-            Image myImage = new Image();
-            myImage.Source = cb;
+            System.Windows.Controls.Image myImage = new System.Windows.Controls.Image
+            {
+                Source = cb
+            };
             return myImage;
         }
 
         /// <summary>
-        /// Gets the image data.
+        /// Gets the image pages.
         /// </summary>
         /// <param name="id">The image identifier.</param>
         /// <returns>The serialized representation of the image.</returns>
         private string GetImageData(Guid id)
         {
-            for (int i = 0; i < this.imgd.Count; i++)
+            for (int i = 0; i < this.imageIds.Count; i++)
             {
-                if (((Guid)this.imgd[i]).Equals(id))
+                if (((Guid)this.imageIds[i]).Equals(id))
                 {
-                    return this.imgs[i] as string;
+                    return this.images[i] as string;
                 }
             }
 

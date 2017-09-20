@@ -23,14 +23,14 @@ namespace DPXReader.DyKnow
         private int ut;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -68,15 +68,15 @@ namespace DPXReader.DyKnow
         /// Initializes a new instance of the <see cref="Pen"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pw">The pageWidth value.</param>
+        /// <param name="ph">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="data">The data value.</param>
         public Pen(int ut, int pw, int ph, Guid uid, string data)
         {
             this.ut = ut;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pw;
+            this.pageHeight = ph;
             this.uid = uid;
             this.data = data;
         }
@@ -93,25 +93,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -159,11 +159,11 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the DATA.
+        /// Gets or sets the Data.
         /// </summary>
-        /// <value>The DATA value.</value>
+        /// <value>The Data value.</value>
         [XmlAttribute("DATA")]
-        public string DATA
+        public string Data
         {
             get { return this.data; }
             set { this.data = value; }

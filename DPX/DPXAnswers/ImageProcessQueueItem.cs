@@ -55,13 +55,15 @@ namespace DPXAnswers
         /// </summary>
         public override void Run()
         {
-            Image myImage = this.dyknow.GetThumbnail(
+            System.Windows.Controls.Image myImage = dyknow.GetThumbnail(
                 this.index,
                 this.window.Inky.ActualWidth,
                 this.window.Inky.ActualHeight,
                 0.4);
-            Border b = new Border();
-            b.Child = myImage;
+            Border b = new Border
+            {
+                Child = myImage
+            };
 
             if (this.index == 0)
             {

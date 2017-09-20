@@ -101,12 +101,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DyKnow\Abox.cs" />
+    <Compile Include="DyKnow\AnswerBox.cs" />
     <Compile Include="DyKnow\Capimg.cs" />
     <Compile Include="DyKnow\Message.cs" />
     <Compile Include="DyKnow\Nlst.cs" />
     <Compile Include="DyKnow\Pgnav.cs" />
-    <Compile Include="DyKnow\Tble.cs" />
+    <Compile Include="DyKnow\Table.cs" />
     <Compile Include="DyKnow\Ulst.cs" />
     <Compile Include="LegacyReader\DyKnowImage.cs" />
     <Compile Include="LegacyReader\DyKnowPage.cs" />
@@ -120,7 +120,7 @@
     <Compile Include="DyKnow\Edob.cs" />
     <Compile Include="DyKnow\Epoll.cs" />
     <Compile Include="DyKnow\Group.cs" />
-    <Compile Include="DyKnow\Img.cs" />
+    <Compile Include="DyKnow\Image.cs" />
     <Compile Include="DyKnow\Link.cs" />
     <Compile Include="DyKnow\Mrgn.cs" />
     <Compile Include="DyKnow\Page.cs" />

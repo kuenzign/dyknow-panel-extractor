@@ -187,9 +187,9 @@ namespace DPXReader
                 {
                     if (this.pens[i].UT == 0)
                     {
-                        if (!this.pens[i].DELETED)
+                        if (!this.pens[i].IsDeleted)
                         {
-                            length += this.pens[i].DATA.Length;
+                            length += this.pens[i].Data.Length;
                         }
                     }
                 }
@@ -209,7 +209,7 @@ namespace DPXReader
                 int total = 0;
                 for (int i = 0; i < this.pens.Count; i++)
                 {
-                    if (this.pens[i].DELETED)
+                    if (this.pens[i].IsDeleted)
                     {
                         total++;
                     }
@@ -230,9 +230,9 @@ namespace DPXReader
                 long total = 0;
                 for (int i = 0; i < this.pens.Count; i++)
                 {
-                    if (this.pens[i].DELETED)
+                    if (this.pens[i].IsDeleted)
                     {
-                        total += this.pens[i].DATA.Length;
+                        total += this.pens[i].Data.Length;
                     }
                 }
 
@@ -274,7 +274,7 @@ namespace DPXReader
                 {
                     if (this.pens[i].UT == 0)
                     {
-                        length += this.pens[i].DATA.Length;
+                        length += this.pens[i].Data.Length;
                     }
                 }
 
@@ -331,7 +331,7 @@ namespace DPXReader
         /// <summary>
         /// Used to get the information form the page for display purposes.
         /// </summary>
-        /// <returns>A string representation of the data on the page.</returns>
+        /// <returns>A string representation of the pages on the page.</returns>
         public string[] GetData()
         {
             string[] data = { this.pageNumber.ToString(), this.userName, this.fullName, this.strokes.ToString(), this.finished };
@@ -339,9 +339,9 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Gets the row data.
+        /// Gets the row pages.
         /// </summary>
-        /// <returns>The object array representation of the data.</returns>
+        /// <returns>The object array representation of the pages.</returns>
         public object[] GetRowData()
         {
             object[] data = { this.pageNumber, this.userName, this.fullName, this.strokes, this.finished };

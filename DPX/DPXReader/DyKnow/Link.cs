@@ -38,14 +38,14 @@ namespace DPXReader.DyKnow
         private string sp;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -119,25 +119,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -152,22 +152,22 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PATH.
+        /// Gets or sets the Path.
         /// </summary>
-        /// <value>The PATH value.</value>
+        /// <value>The Path value.</value>
         [XmlElement("PATH")]
-        public string PATH
+        public string Path
         {
             get { return this.path; }
             set { this.path = value; }
         }
 
         /// <summary>
-        /// Gets or sets the ALIAS.
+        /// Gets or sets the Alias.
         /// </summary>
-        /// <value>The ALIAS value.</value>
+        /// <value>The Alias value.</value>
         [XmlElement("ALIAS")]
-        public string ALIAS
+        public string Alias
         {
             get { return this.alias; }
             set { this.alias = value; }

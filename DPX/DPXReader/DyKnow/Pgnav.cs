@@ -22,14 +22,14 @@ namespace DPXReader.DyKnow
         private int ut;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -42,9 +42,9 @@ namespace DPXReader.DyKnow
         private string ati;
 
         /// <summary>
-        /// The pgguid.
+        /// The pageGuid.
         /// </summary>
-        private Guid pgguid;
+        private Guid pageGuid;
 
         /// <summary>
         /// The type value.
@@ -70,25 +70,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PW.
+        /// Gets or sets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
+        /// <value>The PageWidth value.</value>
         [XmlAttribute("PW")]
-        public int PW
+        public int PageWidth
         {
-            get { return this.pw; }
-            set { this.pw = value; }
+            get { return this.pageWidth; }
+            set { this.pageWidth = value; }
         }
 
         /// <summary>
-        /// Gets or sets the PH.
+        /// Gets or sets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
+        /// <value>The PageHeight value.</value>
         [XmlAttribute("PH")]
-        public int PH
+        public int PageHeight
         {
-            get { return this.ph; }
-            set { this.ph = value; }
+            get { return this.pageHeight; }
+            set { this.pageHeight = value; }
         }
 
         /// <summary>
@@ -114,22 +114,22 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the PGGUID.
+        /// Gets or sets the PageGuid.
         /// </summary>
-        /// <value>The PGGUID value.</value>
+        /// <value>The PageGuid value.</value>
         [XmlElement("PGGUID")]
-        public Guid PGGUID
+        public Guid PageGuid
         {
-            get { return this.pgguid; }
-            set { this.pgguid = value; }
+            get { return this.pageGuid; }
+            set { this.pageGuid = value; }
         }
 
         /// <summary>
-        /// Gets or sets the TYPE.
+        /// Gets or sets the Type.
         /// </summary>
-        /// <value>The TYPE value.</value>
+        /// <value>The Type value.</value>
         [XmlElement("TYPE")]
-        public int TYPE
+        public int Type
         {
             get { return this.type; }
             set { this.type = value; }

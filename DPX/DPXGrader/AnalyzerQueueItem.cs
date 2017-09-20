@@ -54,9 +54,9 @@ namespace DPXGrader
 
             lock (this.window.DyKnow)
             {
-                page = this.window.DyKnow.DATA[this.num] as DPXReader.DyKnow.Page;
+                page = this.window.DyKnow.Pages[this.num] as DPXReader.DyKnow.Page;
                 this.window.DyKnow.Render(ink, this.num);
-                goal = this.window.DyKnow.DATA.Count;
+                goal = this.window.DyKnow.Pages.Count;
             }
 
             ink.Strokes.Clip(this.window.GetRectangleArea());

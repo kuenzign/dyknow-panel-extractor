@@ -20,14 +20,14 @@ namespace DPXReader
         private int ut;
 
         /// <summary>
-        /// The pw value.
+        /// The pageWidth value.
         /// </summary>
-        private int pw;
+        private int pageWidth;
 
         /// <summary>
-        /// The ph value.
+        /// The pageHeight value.
         /// </summary>
-        private int ph;
+        private int pageHeight;
 
         /// <summary>
         /// The uid value.
@@ -35,7 +35,7 @@ namespace DPXReader
         private string uid;
 
         /// <summary>
-        /// The data value.
+        /// The pages value.
         /// </summary>
         private string data;
 
@@ -48,15 +48,15 @@ namespace DPXReader
         /// Initializes a new instance of the <see cref="DyKnowPenStroke"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
-        /// <param name="pw">The pw value.</param>
-        /// <param name="ph">The ph value.</param>
+        /// <param name="pw">The pageWidth value.</param>
+        /// <param name="ph">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
-        /// <param name="data">The data value.</param>
+        /// <param name="data">The pages value.</param>
         public DyKnowPenStroke(int ut, int pw, int ph, string uid, string data)
         {
             this.ut = ut;
-            this.pw = pw;
-            this.ph = ph;
+            this.pageWidth = pw;
+            this.pageHeight = ph;
             this.uid = uid;
             this.data = data;
             this.deleted = false;
@@ -72,21 +72,21 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Gets the PW.
+        /// Gets the PageWidth.
         /// </summary>
-        /// <value>The PW value.</value>
-        public int PW
+        /// <value>The PageWidth value.</value>
+        public int PageWidth
         {
-            get { return this.pw; }
+            get { return this.pageWidth; }
         }
 
         /// <summary>
-        /// Gets the PH.
+        /// Gets the PageHeight.
         /// </summary>
-        /// <value>The PH value.</value>
-        public int PH
+        /// <value>The PageHeight value.</value>
+        public int PageHeight
         {
-            get { return this.ph; }
+            get { return this.pageHeight; }
         }
 
         /// <summary>
@@ -99,19 +99,19 @@ namespace DPXReader
         }
 
         /// <summary>
-        /// Gets the DATA.
+        /// Gets the Data.
         /// </summary>
-        /// <value>The DATA value.</value>
-        public string DATA
+        /// <value>The Data value.</value>
+        public string Data
         {
             get { return this.data; }
         }
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="DyKnowPenStroke"/> is DELETED.
+        /// Gets a value indicating whether this <see cref="DyKnowPenStroke"/> is IsDeleted.
         /// </summary>
-        /// <value><c>True</c> if DELETED; otherwise, <c>false</c>.</value>
-        public bool DELETED
+        /// <value><c>True</c> if IsDeleted; otherwise, <c>false</c>.</value>
+        public bool IsDeleted
         {
             get { return this.deleted; }
         }
@@ -132,7 +132,7 @@ namespace DPXReader
         /// </returns>
         public override string ToString()
         {
-            return "UT=" + this.ut.ToString() + " PW=" + this.pw.ToString() + " UID=" + this.uid +
+            return "UT=" + this.ut.ToString() + " PW=" + this.pageWidth.ToString() + " UID=" + this.uid +
                 " DATA=" + this.data + " DEL=" + this.deleted.ToString();
         }
     }
