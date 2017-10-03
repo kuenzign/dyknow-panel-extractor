@@ -63,7 +63,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ThirdParty\IACore.dll</HintPath>
     </Reference>
-    <Reference Include="IALoader, Version=1.9.5230.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+    <Reference Include="IALoader, Version=1.7.6223.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\Microsoft SDKs\Windows\v6.0\Bin\IALoader.dll</HintPath>
     </Reference>
@@ -184,7 +184,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
