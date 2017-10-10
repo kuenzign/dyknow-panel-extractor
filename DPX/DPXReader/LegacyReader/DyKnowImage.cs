@@ -57,34 +57,34 @@ namespace DPXReader
         /// <summary>
         /// The width value.
         /// </summary>
-        private int wid;
+        private int width;
 
         /// <summary>
         /// The height value.
         /// </summary>
-        private int hei;
+        private int height;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DyKnowImage"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
-        /// <param name="pw">The pageWidth value.</param>
-        /// <param name="ph">The pageHeight value.</param>
+        /// <param name="pageWidth">The pageWidth value.</param>
+        /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="id">The unique id.</param>
-        /// <param name="wid">The width value.</param>
-        /// <param name="hei">The height value.</param>
-        public DyKnowImage(int ut, string sp, int pw, int ph, string uid, string id, int wid, int hei)
+        /// <param name="width">The width value.</param>
+        /// <param name="height">The height value.</param>
+        public DyKnowImage(int ut, string sp, int pageWidth, int pageHeight, string uid, string id, int width, int height)
         {
             this.ut = ut;
             this.sp = sp;
-            this.pageWidth = pw;
-            this.pageHeight = ph;
+            this.pageWidth = pageWidth;
+            this.pageHeight = pageHeight;
             this.uid = new Guid(uid);
             this.id = new Guid(id);
-            this.wid = wid;
-            this.hei = hei;
+            this.width = width;
+            this.height = height;
         }
 
         /// <summary>
@@ -92,22 +92,22 @@ namespace DPXReader
         /// </summary>
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
-        /// <param name="pw">The pageWidth value.</param>
-        /// <param name="ph">The pageHeight value.</param>
+        /// <param name="pageWidth">The pageWidth value.</param>
+        /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="id">The unique id.</param>
-        /// <param name="wid">The width value.</param>
-        /// <param name="hei">The height value.</param>
-        public DyKnowImage(int ut, string sp, int pw, int ph, Guid uid, Guid id, int wid, int hei)
+        /// <param name="width">The width value.</param>
+        /// <param name="height">The height value.</param>
+        public DyKnowImage(int ut, string sp, int pageWidth, int pageHeight, Guid uid, Guid id, int width, int height)
         {
             this.ut = ut;
             this.sp = sp;
-            this.pageWidth = pw;
-            this.pageHeight = ph;
+            this.pageWidth = pageWidth;
+            this.pageHeight = pageHeight;
             this.uid = uid;
             this.id = id;
-            this.wid = wid;
-            this.hei = hei;
+            this.width = width;
+            this.height = height;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace DPXReader
         /// <value>The width of the image.</value>
         internal double ImageWidth
         {
-            get { return (double)this.wid / (double)DyKnowImage.ReferenceWidth; }
+            get { return (double)this.width / ReferenceWidth; }
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace DPXReader
         /// <value>The height of the image.</value>
         internal double ImageHeight
         {
-            get { return (double)this.hei / (double)DyKnowImage.ReferenceHeight; }
+            get { return (double)this.height / ReferenceHeight; }
         }
 
         /// <summary>
@@ -182,15 +182,15 @@ namespace DPXReader
                 int start = this.sp.IndexOf(':') + 1;
                 string val = this.sp.Substring(start);
                 double num = int.Parse(val);
-                return num / DyKnowImage.ReferenceHeight;
+                return num / ReferenceHeight;
             }
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>
-        /// A <see cref="System.String"/> that represents this instance.
+        /// A <see cref="string"/> that represents this instance.
         /// </returns>
         public override string ToString()
         {

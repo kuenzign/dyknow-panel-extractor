@@ -88,9 +88,9 @@ namespace DPXReader.DyKnow
         /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="id">The id value.</param>
-        /// <param name="wid">The width value.</param>
-        /// <param name="hei">The height value.</param>
-        public Image(int ut, string sp, int pageWidth, int pageHeight, Guid uid, Guid id, int wid, int hei)
+        /// <param name="width">The width value.</param>
+        /// <param name="height">The height value.</param>
+        public Image(int ut, string sp, int pageWidth, int pageHeight, Guid uid, Guid id, int width, int height)
         {
             this.ut = ut;
             this.sp = sp;
@@ -98,8 +98,8 @@ namespace DPXReader.DyKnow
             this.pageHeight = pageHeight;
             this.uid = uid;
             this.id = id;
-            this.width = wid;
-            this.height = hei;
+            this.width = width;
+            this.height = height;
         }
 
         /// <summary>
