@@ -69,10 +69,7 @@ namespace DPXReader
         /// Gets the image pages string64.
         /// </summary>
         /// <returns>A string64 representation of the image.</returns>
-        public string GetImageDataString64()
-        {
-            return this.img;
-        }
+        public string GetImageDataString64() => this.img;
 
         /// <summary>
         /// Returns a <see cref="string"/> that represents this instance.
@@ -80,9 +77,6 @@ namespace DPXReader
         /// <returns>
         /// A <see cref="string"/> that represents this instance.
         /// </returns>
-        public override string ToString()
-        {
-            return this.id.ToString() + " - Length: " + this.img.Length;
-        }
+        public override string ToString() => this.id.ToString() + " - Length: " + this.img.Length;
     }
 }

@@ -78,9 +78,11 @@ namespace DPXManager
             try
             {
                 // Configure save file dialog box
-                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-                dlg.DefaultExt = ".txt"; // Default file extension
-                dlg.Filter = "Text documents (*.txt)|*.txt"; // Filter files by extension
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog
+                {
+                    DefaultExt = ".txt", // Default file extension
+                    Filter = "Text documents (*.txt)|*.txt" // Filter files by extension
+                };
 
                 // Show open file dialog box
                 Nullable<bool> result = dlg.ShowDialog();

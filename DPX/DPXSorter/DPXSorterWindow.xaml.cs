@@ -41,9 +41,11 @@ namespace DPXSorter
         private void OpenDialog_Box(object sender, RoutedEventArgs e)
         {
             // Configure open file dialog box
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.DefaultExt = ".dyz"; // Default file extension
-            dlg.Filter = "DyKnow Files (.dyz)|*.dyz"; // Filter files by extension
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                DefaultExt = ".dyz", // Default file extension
+                Filter = "DyKnow Files (.dyz)|*.dyz" // Filter files by extension
+            };
 
             // Show open file dialog box
             Nullable<bool> result = dlg.ShowDialog();
@@ -64,9 +66,11 @@ namespace DPXSorter
         private void SaveDialog_Box(object sender, RoutedEventArgs e)
         {
             // Configure save file dialog box
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.DefaultExt = ".dyz"; // Default file extension
-            dlg.Filter = "DyKnow Files (.dyz)|*.dyz"; // Filter files by extension
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog
+            {
+                DefaultExt = ".dyz", // Default file extension
+                Filter = "DyKnow Files (.dyz)|*.dyz" // Filter files by extension
+            };
 
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();
@@ -124,8 +128,10 @@ namespace DPXSorter
         /// <param name="e">Event arguments.</param>
         private void DisplayAboutWindow(object sender, RoutedEventArgs e)
         {
-            AboutDPX popupWindow = new AboutDPX();
-            popupWindow.Owner = this;
+            AboutDPX popupWindow = new AboutDPX
+            {
+                Owner = this
+            };
             popupWindow.ShowDialog();
         }
     }

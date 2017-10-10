@@ -68,8 +68,10 @@ namespace DPXPreview
         private void ButtonLoadClick(object sender, RoutedEventArgs e)
         {
             // Let the user choose which file to open
-            Microsoft.Win32.OpenFileDialog openFileDialog1 = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog1.Filter = "DyKnow files (*.dyz)|*.dyz";
+            Microsoft.Win32.OpenFileDialog openFileDialog1 = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "DyKnow files (*.dyz)|*.dyz"
+            };
             if (openFileDialog1.ShowDialog() == true)
             {
                 string filename = openFileDialog1.FileName;
@@ -129,8 +131,10 @@ namespace DPXPreview
         /// <param name="e">Event arguments.</param>
         private void ButtonExportImageClick(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.SaveFileDialog saveFileDialog1 = new Microsoft.Win32.SaveFileDialog();
-            saveFileDialog1.Filter = "JPEG (*.jpg)|*.jpg";
+            Microsoft.Win32.SaveFileDialog saveFileDialog1 = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "JPEG (*.jpg)|*.jpg"
+            };
             if (saveFileDialog1.ShowDialog() == true)
             {
                 FileStream fs = new FileStream(saveFileDialog1.FileName, FileMode.Create);
@@ -185,8 +189,10 @@ namespace DPXPreview
         /// <param name="e">Event arguments.</param>
         private void DisplayAboutWindow(object sender, RoutedEventArgs e)
         {
-            AboutDPX popupWindow = new AboutDPX();
-            popupWindow.Owner = this;
+            AboutDPX popupWindow = new AboutDPX
+            {
+                Owner = this
+            };
             popupWindow.ShowDialog();
         }
 

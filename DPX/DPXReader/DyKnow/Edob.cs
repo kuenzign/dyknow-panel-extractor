@@ -81,19 +81,19 @@ namespace DPXReader.DyKnow
         /// <param name="ut">The ut value.</param>
         /// <param name="sp">The sp value.</param>
         /// <param name="ep">The ep value.</param>
-        /// <param name="pw">The pageWidth value.</param>
-        /// <param name="ph">The pageHeight value.</param>
+        /// <param name="pageWidth">The pageWidth value.</param>
+        /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="isrem">if set to <c>true</c> [isrem].</param>
         /// <param name="sti">The sti value.</param>
-        public Edob(int ut, string sp, string ep, int pw, int ph, Guid uid, bool isrem, int sti)
+        public Edob(int ut, string sp, string ep, int pageWidth, int pageHeight, Guid uid, bool isrem, int sti)
         {
             this.edli = new ArrayList();
             this.ut = ut;
             this.sp = sp;
             this.ep = ep;
-            this.pageWidth = pw;
-            this.pageHeight = ph;
+            this.pageWidth = pageWidth;
+            this.pageHeight = pageHeight;
             this.uid = uid;
             this.isrem = isrem;
         }

@@ -47,8 +47,10 @@ namespace DPXManager
         /// <param name="e">Event arguments.</param>
         private void DisplayAboutWindow(object sender, RoutedEventArgs e)
         {
-            AboutDPX popupWindow = new AboutDPX();
-            popupWindow.Owner = this;
+            AboutDPX popupWindow = new AboutDPX
+            {
+                Owner = this
+            };
             popupWindow.ShowDialog();
         }
 
@@ -65,9 +67,11 @@ namespace DPXManager
                 if (!this.c.IsDatabaseOpen())
                 {
                     // Configure open file dialog box
-                    Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-                    dlg.DefaultExt = ".accdb"; // Default file extension
-                    dlg.Filter = "Database File (.accdb)|*.accdb"; // Filter files by extension
+                    Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+                    {
+                        DefaultExt = ".accdb", // Default file extension
+                        Filter = "Database File (.accdb)|*.accdb" // Filter files by extension
+                    };
 
                     // Show open file dialog box
                     Nullable<bool> result = dlg.ShowDialog();
@@ -134,9 +138,11 @@ namespace DPXManager
                 locationOfNewDatabase = locationOfNewDatabase.Substring(6);
 
                 // Configure save file dialog box
-                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-                dlg.DefaultExt = ".seat"; // Default file extension
-                dlg.Filter = "Database (.accdb)|*.accdb"; // Filter files by extension
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog
+                {
+                    DefaultExt = ".seat", // Default file extension
+                    Filter = "Database (.accdb)|*.accdb" // Filter files by extension
+                };
 
                 // Show open file dialog box
                 Nullable<bool> result = dlg.ShowDialog();

@@ -57,9 +57,11 @@ namespace DPXManager
             InitializeComponent();
 
             // Configure open file dialog box
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.DefaultExt = ".csv"; // Default file extension
-            dlg.Filter = "Roster File (.csv)|*.csv"; // Filter files by extension
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                DefaultExt = ".csv", // Default file extension
+                Filter = "Roster File (.csv)|*.csv" // Filter files by extension
+            };
 
             // Show open file dialog box
             Nullable<bool> result = dlg.ShowDialog();
@@ -109,8 +111,10 @@ namespace DPXManager
             // Add all of the necessary rows
             for (int i = 0; i < this.rosterFile.Count + 1; i++)
             {
-                RowDefinition rd = new RowDefinition();
-                rd.Height = new GridLength(20);
+                RowDefinition rd = new RowDefinition
+                {
+                    Height = new GridLength(20)
+                };
                 myGrid.RowDefinitions.Add(rd);
             }
 
@@ -123,17 +127,25 @@ namespace DPXManager
                 ComboBox cbox = new ComboBox();
                 this.columns[i] = cbox;
                 cbox.Background = Brushes.LightBlue;
-                ComboBoxItem cboxitem = new ComboBoxItem();
-                cboxitem.Content = "First Name";
+                ComboBoxItem cboxitem = new ComboBoxItem
+                {
+                    Content = "First Name"
+                };
                 cbox.Items.Add(cboxitem);
-                ComboBoxItem cboxitem2 = new ComboBoxItem();
-                cboxitem2.Content = "Last Name";
+                ComboBoxItem cboxitem2 = new ComboBoxItem
+                {
+                    Content = "Last Name"
+                };
                 cbox.Items.Add(cboxitem2);
-                ComboBoxItem cboxitem3 = new ComboBoxItem();
-                cboxitem3.Content = "User name";
+                ComboBoxItem cboxitem3 = new ComboBoxItem
+                {
+                    Content = "User name"
+                };
                 cbox.Items.Add(cboxitem3);
-                ComboBoxItem cboxitem4 = new ComboBoxItem();
-                cboxitem4.Content = "Section";
+                ComboBoxItem cboxitem4 = new ComboBoxItem
+                {
+                    Content = "Section"
+                };
                 cbox.Items.Add(cboxitem4);
                 Grid.SetRow(cbox, 0);
                 Grid.SetColumn(cbox, i);
@@ -151,10 +163,12 @@ namespace DPXManager
 
                 for (int j = 0; j < cols.Length; j++)
                 {
-                    TextBlock cell = new TextBlock();
-                    cell.Text = cols[j];
-                    cell.FontSize = 11;
-                    cell.VerticalAlignment = VerticalAlignment.Top;
+                    TextBlock cell = new TextBlock
+                    {
+                        Text = cols[j],
+                        FontSize = 11,
+                        VerticalAlignment = VerticalAlignment.Top
+                    };
                     Grid.SetRow(cell, i + 1);
                     Grid.SetColumn(cell, j);
                     myGrid.Children.Add(cell);

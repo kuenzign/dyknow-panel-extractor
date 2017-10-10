@@ -129,9 +129,11 @@ namespace DPXAnswers
         /// </returns>
         public object Clone()
         {
-            BoxAnalysis ba = new BoxAnalysis();
-            ba.answer = this.answer.Clone() as string;
-            ba.alternates = new Collection<string>();
+            BoxAnalysis ba = new BoxAnalysis
+            {
+                answer = this.answer.Clone() as string,
+                alternates = new Collection<string>()
+            };
             for (int i = 0; i < this.alternates.Count; i++)
             {
                 ba.alternates.Add(this.alternates[i].Clone() as string);

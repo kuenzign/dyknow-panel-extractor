@@ -109,8 +109,10 @@ namespace DPXAnswers
             Debug.WriteLine("Starting " + Environment.ProcessorCount + " threads for processing.");
             for (int i = 0; i < Environment.ProcessorCount; i++)
             {
-                Thread t = new Thread(new ThreadStart(this.Worker));
-                t.Name = "Queue Worker " + i;
+                Thread t = new Thread(new ThreadStart(Worker))
+                {
+                    Name = "Queue Worker " + i
+                };
                 t.SetApartmentState(ApartmentState.STA);
                 t.Start();
                 this.workers.Add(t);
@@ -303,8 +305,10 @@ namespace DPXAnswers
             // Display the answer information to the user
             for (int i = 0; i < panel.Keys.Count; i++)
             {
-                RowDefinition rd = new RowDefinition();
-                rd.Height = GridLength.Auto;
+                RowDefinition rd = new RowDefinition
+                {
+                    Height = GridLength.Auto
+                };
                 g.RowDefinitions.Add(rd);
                 GradeRow gr = new GradeRow(g, this.answerWindow, panel, i);
                 this.gradeRows.Add(gr);
@@ -323,8 +327,10 @@ namespace DPXAnswers
             {
                 // Add the value to the drop down list
                 AnswerRect ar = rects[i];
-                ComboBoxItem cbi = new ComboBoxItem();
-                cbi.Content = ar;
+                ComboBoxItem cbi = new ComboBoxItem
+                {
+                    Content = ar
+                };
                 this.answerWindow.ComboBoxBoxList.Items.Add(cbi);
 
                 // Select the first value
@@ -382,8 +388,10 @@ namespace DPXAnswers
             {
                 for (int j = 0; j < ar.Cluster.Groups.Count; j++)
                 {
-                    RowDefinition rd = new RowDefinition();
-                    rd.Height = GridLength.Auto;
+                    RowDefinition rd = new RowDefinition
+                    {
+                        Height = GridLength.Auto
+                    };
                     g.RowDefinitions.Add(rd);
 
                     GradeGroup gg = new GradeGroup(ar.Cluster, j);

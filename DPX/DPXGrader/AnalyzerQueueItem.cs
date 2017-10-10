@@ -46,9 +46,11 @@ namespace DPXGrader
         /// </summary>
         public override void Run()
         {
-            InkCanvas ink = new InkCanvas();
-            ink.Width = 400;
-            ink.Height = 300;
+            InkCanvas ink = new InkCanvas
+            {
+                Width = 400,
+                Height = 300
+            };
             DPXReader.DyKnow.Page page;
             int goal = 0;
 

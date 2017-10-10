@@ -85,8 +85,10 @@ namespace DPXGrader
             Debug.WriteLine("Starting " + Environment.ProcessorCount + " threads for processing.");
             for (int i = 0; i < Environment.ProcessorCount; i++)
             {
-                Thread t = new Thread(new ThreadStart(this.Worker));
-                t.Name = "Queue Worker " + i;
+                Thread t = new Thread(new ThreadStart(this.Worker))
+                {
+                    Name = "Queue Worker " + i
+                };
                 t.SetApartmentState(ApartmentState.STA);
                 t.Start();
                 this.workers.Add(t);
@@ -239,51 +241,63 @@ namespace DPXGrader
         /// <param name="value">The numeric value.</param>
         internal void AddRowToResults(int i, string onern, string oner, string text, double value)
         {
-            RowDefinition rd = new RowDefinition();
-            rd.Height = GridLength.Auto;
+            RowDefinition rd = new RowDefinition
+            {
+                Height = GridLength.Auto
+            };
             this.GridResults.RowDefinitions.Add(rd);
 
             // Add the panel number
-            Label num = new Label();
-            num.Content = (i + 1).ToString();
-            num.BorderBrush = Brushes.DarkGray;
-            num.BorderThickness = new Thickness(1);
+            Label num = new Label
+            {
+                Content = (i + 1).ToString(),
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1)
+            };
             Grid.SetRow(num, i);
             Grid.SetColumn(num, 0);
             this.GridResults.Children.Add(num);
 
             // Add the name
-            Label name = new Label();
-            name.Content = onern;
-            name.BorderBrush = Brushes.DarkGray;
-            name.BorderThickness = new Thickness(1);
+            Label name = new Label
+            {
+                Content = onern,
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1)
+            };
             Grid.SetRow(name, i);
             Grid.SetColumn(name, 1);
             this.GridResults.Children.Add(name);
 
             // Add the username
-            Label user = new Label();
-            user.Content = oner;
-            user.BorderBrush = Brushes.DarkGray;
-            user.BorderThickness = new Thickness(1);
+            Label user = new Label
+            {
+                Content = oner,
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1)
+            };
             Grid.SetRow(user, i);
             Grid.SetColumn(user, 2);
             this.GridResults.Children.Add(user);
 
             // Add the recognized text
-            Label cont = new Label();
-            cont.Content = text;
-            cont.BorderBrush = Brushes.DarkGray;
-            cont.BorderThickness = new Thickness(1);
+            Label cont = new Label
+            {
+                Content = text,
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1)
+            };
             Grid.SetRow(cont, i);
             Grid.SetColumn(cont, 3);
             this.GridResults.Children.Add(cont);
 
             // Add the recognized text converted to a number
-            Label digit = new Label();
-            digit.Content = value;
-            digit.BorderBrush = Brushes.DarkGray;
-            digit.BorderThickness = new Thickness(1);
+            Label digit = new Label
+            {
+                Content = value,
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1)
+            };
             Grid.SetRow(digit, i);
             Grid.SetColumn(digit, 4);
             this.GridResults.Children.Add(digit);
@@ -683,16 +697,20 @@ namespace DPXGrader
         private void ButtonOpen_Click(object sender, RoutedEventArgs e)
         {
             // Let the user choose which file to open
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Filter = "DyKnow files (*.dyz)|*.dyz";
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "DyKnow files (*.dyz)|*.dyz"
+            };
             if (openFileDialog.ShowDialog() == true)
             {
                 this.ButtonOpen.IsEnabled = false;
 
                 // Open the DyKnow file
                 this.fileName = openFileDialog.FileName;
-                Thread t = new Thread(new ThreadStart(this.LoadDyKnowFile));
-                t.Name = "OpenFileThread";
+                Thread t = new Thread(new ThreadStart(this.LoadDyKnowFile))
+                {
+                    Name = "OpenFileThread"
+                };
                 t.Start();
             }
         }
@@ -737,8 +755,10 @@ namespace DPXGrader
             this.ButtonProcess.IsEnabled = false;
 
             // Start processing all of the DyKnow files
-            Thread t = new Thread(new ThreadStart(this.ProcessStep));
-            t.Name = "ProcessThread";
+            Thread t = new Thread(new ThreadStart(ProcessStep))
+            {
+                Name = "ProcessThread"
+            };
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
@@ -753,8 +773,10 @@ namespace DPXGrader
             try
             {
                 // Let the user choose which file to open
-                Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
-                saveFileDialog.Filter = "CSV (*.csv)|*.csv";
+                Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog
+                {
+                    Filter = "CSV (*.csv)|*.csv"
+                };
                 if (saveFileDialog.ShowDialog() == true)
                 {
                     // Save the CSV file

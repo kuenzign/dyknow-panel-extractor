@@ -116,8 +116,7 @@ namespace DPXManager
         /// <param name="e">Event arguments.</param>
         private void ListBoxStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Student s = listBoxStudents.SelectedValue as Student;
-            if (s != null)
+            if (listBoxStudents.SelectedValue is Student s)
             {
                 // Display the student information
                 textBoxStudentFirstName.Text = s.FirstName;
@@ -183,8 +182,10 @@ namespace DPXManager
             List<DisplayExceptionInfo> dei = this.c.DB.GetExceptionsForStudent(studentId);
             for (int i = 0; i < dei.Count; i++)
             {
-                RowDefinition rd = new RowDefinition();
-                rd.Height = new GridLength(30);
+                RowDefinition rd = new RowDefinition
+                {
+                    Height = new GridLength(30)
+                };
                 gridException.RowDefinitions.Add(rd);
 
                 DisplayExceptionInfo d = dei[i];
@@ -197,8 +198,10 @@ namespace DPXManager
                 }
 
                 // Date column
-                Label date = new Label();
-                date.Content = d.Date.Date.ToShortDateString();
+                Label date = new Label
+                {
+                    Content = d.Date.Date.ToShortDateString()
+                };
                 if (today)
                 {
                     date.Background = Brushes.LightBlue;
@@ -211,8 +214,10 @@ namespace DPXManager
                 gridException.Children.Add(date);
 
                 // Credit column
-                Label credit = new Label();
-                credit.Content = d.Credit;
+                Label credit = new Label
+                {
+                    Content = d.Credit
+                };
                 if (d.Credit)
                 {
                     credit.Background = Brushes.LightGreen;
@@ -229,8 +234,10 @@ namespace DPXManager
                 gridException.Children.Add(credit);
 
                 // Description column
-                Label description = new Label();
-                description.Content = d.Description;
+                Label description = new Label
+                {
+                    Content = d.Description
+                };
                 if (today)
                 {
                     description.Background = Brushes.LightBlue;
@@ -243,8 +250,10 @@ namespace DPXManager
                 gridException.Children.Add(description);
 
                 // Notes column
-                Label notes = new Label();
-                notes.Content = d.Notes;
+                Label notes = new Label
+                {
+                    Content = d.Notes
+                };
                 if (today)
                 {
                     notes.Background = Brushes.LightBlue;
@@ -271,8 +280,10 @@ namespace DPXManager
             List<DisplayPanelInfo> dpi = this.c.DB.GetPanelsForStudent(studentId);
             for (int i = 0; i < dpi.Count; i++)
             {
-                RowDefinition rd = new RowDefinition();
-                rd.Height = new GridLength(30);
+                RowDefinition rd = new RowDefinition
+                {
+                    Height = new GridLength(30)
+                };
                 gridPanels.RowDefinitions.Add(rd);
 
                 DisplayPanelInfo d = dpi[i];
@@ -285,8 +296,10 @@ namespace DPXManager
                 }
 
                 // Date column
-                Label date = new Label();
-                date.Content = d.Date.Date.ToShortDateString();
+                Label date = new Label
+                {
+                    Content = d.Date.Date.ToShortDateString()
+                };
                 if (today)
                 {
                     date.Background = Brushes.LightBlue;
@@ -299,8 +312,10 @@ namespace DPXManager
                 gridPanels.Children.Add(date);
 
                 // File column
-                Label file = new Label();
-                file.Content = d.FileName;
+                Label file = new Label
+                {
+                    Content = d.FileName
+                };
                 if (today)
                 {
                     file.Background = Brushes.LightBlue;
@@ -313,8 +328,10 @@ namespace DPXManager
                 gridPanels.Children.Add(file);
 
                 // Slide number column
-                Label slidenum = new Label();
-                slidenum.Content = d.SlideNumber;
+                Label slidenum = new Label
+                {
+                    Content = d.SlideNumber
+                };
                 if (today)
                 {
                     slidenum.Background = Brushes.LightBlue;
@@ -327,8 +344,10 @@ namespace DPXManager
                 gridPanels.Children.Add(slidenum);
 
                 // Total stroke count column
-                Label tstrokecount = new Label();
-                tstrokecount.Content = d.TotalStrokeCount;
+                Label tstrokecount = new Label
+                {
+                    Content = d.TotalStrokeCount
+                };
                 if (today)
                 {
                     tstrokecount.Background = Brushes.LightBlue;
@@ -341,8 +360,10 @@ namespace DPXManager
                 gridPanels.Children.Add(tstrokecount);
 
                 // Net stroke count column
-                Label nstrokecount = new Label();
-                nstrokecount.Content = d.NetStrokeCount;
+                Label nstrokecount = new Label
+                {
+                    Content = d.NetStrokeCount
+                };
                 if (today)
                 {
                     nstrokecount.Background = Brushes.LightBlue;
@@ -355,8 +376,10 @@ namespace DPXManager
                 gridPanels.Children.Add(nstrokecount);
 
                 // Is blank column
-                Label isblank = new Label();
-                isblank.Content = d.IsBlank.ToString();
+                Label isblank = new Label
+                {
+                    Content = d.IsBlank.ToString()
+                };
                 if (today)
                 {
                     isblank.Background = Brushes.LightBlue;
@@ -369,8 +392,10 @@ namespace DPXManager
                 gridPanels.Children.Add(isblank);
 
                 // Analysis column
-                Label analysis = new Label();
-                analysis.Content = d.Analysis;
+                Label analysis = new Label
+                {
+                    Content = d.Analysis
+                };
                 if (d.Analysis.Equals("Yes"))
                 {
                     analysis.Background = Brushes.LightGreen;
@@ -399,8 +424,7 @@ namespace DPXManager
         /// <param name="e">Event arguments.</param>
         private void ComboBoxSection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Student s = listBoxStudents.SelectedValue as Student;
-            if (s != null && this.c.IsDatabaseOpen())
+            if (listBoxStudents.SelectedValue is Student s && this.c.IsDatabaseOpen())
             {
                 DPXDatabase.Section section = comboBoxSection.SelectedValue as DPXDatabase.Section;
                 this.c.DB.UpdateStudentSection(section.Id, s.Id);
@@ -415,8 +439,7 @@ namespace DPXManager
         /// <param name="e">Event arguments.</param>
         private void CheckBoxStudentIsEnrolled_Checked(object sender, RoutedEventArgs e)
         {
-            Student s = listBoxStudents.SelectedValue as Student;
-            if (s != null && this.c.IsDatabaseOpen())
+            if (listBoxStudents.SelectedValue is Student s && this.c.IsDatabaseOpen())
             {
                 this.c.DB.UpdateStudentSetEnrolled(true, s.Id);
                 s.IsEnrolled = true;
@@ -430,8 +453,7 @@ namespace DPXManager
         /// <param name="e">Event arguments.</param>
         private void CheckBoxStudentIsEnrolled_Unchecked(object sender, RoutedEventArgs e)
         {
-            Student s = listBoxStudents.SelectedValue as Student;
-            if (s != null && this.c.IsDatabaseOpen())
+            if (listBoxStudents.SelectedValue is Student s && this.c.IsDatabaseOpen())
             {
                 this.c.DB.UpdateStudentSetEnrolled(false, s.Id);
                 s.IsEnrolled = false;

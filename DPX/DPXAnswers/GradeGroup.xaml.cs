@@ -101,36 +101,46 @@ namespace DPXAnswers
             {
                 BoxAnalysis ba = this.group.Nodes[i].Value as BoxAnalysis;
 
-                StackPanel stackHorizontal = new StackPanel();
-                stackHorizontal.Orientation = Orientation.Horizontal;
+                StackPanel stackHorizontal = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal
+                };
                 if (i + 1 == this.group.Nodes.Count)
                 {
                     // Add a margin to only the last element
                     stackHorizontal.Margin = new Thickness(0, 0, 0, 10);
                 }
 
-                StackPanel stackVertical = new StackPanel();
-                stackVertical.Orientation = Orientation.Vertical;
-                stackVertical.Margin = new Thickness(0);
+                StackPanel stackVertical = new StackPanel
+                {
+                    Orientation = Orientation.Vertical,
+                    Margin = new Thickness(0)
+                };
                 stackHorizontal.Children.Add(stackVertical);
 
                 // The button for displaying the panel
-                Button b = new Button();
-                b.Content = "Display";
-                b.Tag = ba.PanelIndex + string.Empty;
+                Button b = new Button
+                {
+                    Content = "Display",
+                    Tag = ba.PanelIndex + string.Empty,
+                    Width = 80
+                };
                 b.Click += this.ButtonDisplayPanelClick;
-                b.Width = 80;
                 stackVertical.Children.Add(b);
 
                 // The combo box for moving an answer between groups
-                ComboBox box = new ComboBox();
-                box.Width = 80;
-                box.Tag = this.group.Nodes[i];
+                ComboBox box = new ComboBox
+                {
+                    Width = 80,
+                    Tag = this.group.Nodes[i]
+                };
                 for (int j = 0; j < this.cluster.Groups.Count; j++)
                 {
-                    ComboBoxItem cbi = new ComboBoxItem();
-                    cbi.Content = "Group " + j;
-                    cbi.Tag = j + string.Empty;
+                    ComboBoxItem cbi = new ComboBoxItem
+                    {
+                        Content = "Group " + j,
+                        Tag = j + string.Empty
+                    };
                     if (j == this.index)
                     {
                         cbi.IsSelected = true;
@@ -140,21 +150,27 @@ namespace DPXAnswers
                 }
 
                 // The combo box that lets answers to be moved between groups
-                ComboBoxItem cbinew = new ComboBoxItem();
-                cbinew.Content = "New Group";
-                cbinew.Tag = -1 + string.Empty;
+                ComboBoxItem cbinew = new ComboBoxItem
+                {
+                    Content = "New Group",
+                    Tag = -1 + string.Empty
+                };
                 box.Items.Add(cbinew);
                 box.SelectionChanged += this.BoxSelectionChanged;
                 stackVertical.Children.Add(box);
 
                 // The thumbnail of the answer
-                Border imgBorder = new Border();
-                imgBorder.Background = Brushes.LightGray;
-                imgBorder.Margin = new Thickness(0, 10, 0, 0);
-                Image img = new Image();
-                img.Source = ba.Thumb.Source;
-                img.ToolTip = ba.Answer;
-                img.Width = 150;
+                Border imgBorder = new Border
+                {
+                    Background = Brushes.LightGray,
+                    Margin = new Thickness(0, 10, 0, 0)
+                };
+                Image img = new Image
+                {
+                    Source = ba.Thumb.Source,
+                    ToolTip = ba.Answer,
+                    Width = 150
+                };
                 imgBorder.Child = img;
                 stackHorizontal.Children.Add(imgBorder);
 

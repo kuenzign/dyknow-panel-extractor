@@ -169,8 +169,10 @@ namespace DPXDatabase
             OleDbCommand myCommand = new OleDbCommand(mySelectQuery, this.connection);
             this.Open();
             OleDbDataReader myReader = myCommand.ExecuteReader();
-            List<Section> sections = new List<Section>();
-            sections.Add(new Section(-1, "No Section"));
+            List<Section> sections = new List<Section>
+            {
+                new Section(-1, "No Section")
+            };
             try
             {
                 while (myReader.Read())

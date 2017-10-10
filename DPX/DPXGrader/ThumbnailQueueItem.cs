@@ -52,8 +52,10 @@ namespace DPXGrader
                 this.window.Inky.ActualWidth,
                 this.window.Inky.ActualHeight,
                 0.4);
-            Border b = new Border();
-            b.Child = myImage;
+            Border b = new Border
+            {
+                Child = myImage
+            };
 
             if (this.num == 0)
             {

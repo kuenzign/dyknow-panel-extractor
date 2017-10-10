@@ -84,44 +84,56 @@ namespace DPXManager
             {
                 DyKnowPage dp = this.dr.GetDyKnowPage(i);
 
-                RowDefinition rd = new RowDefinition();
-                rd.Height = new GridLength(30);
+                RowDefinition rd = new RowDefinition
+                {
+                    Height = new GridLength(30)
+                };
                 grid1.RowDefinitions.Add(rd);
 
-                Label num = new Label();
-                num.Content = (i + 1).ToString();
+                Label num = new Label
+                {
+                    Content = (i + 1).ToString()
+                };
                 Grid.SetColumn(num, 0);
                 Grid.SetRow(num, i);
                 num.BorderThickness = new Thickness(1);
                 num.BorderBrush = Brushes.Black;
                 grid1.Children.Add(num);
 
-                Label user = new Label();
-                user.Content = dp.UserName;
+                Label user = new Label
+                {
+                    Content = dp.UserName
+                };
                 Grid.SetColumn(user, 1);
                 Grid.SetRow(user, i);
                 user.BorderThickness = new Thickness(1);
                 user.BorderBrush = Brushes.Black;
                 grid1.Children.Add(user);
 
-                Label name = new Label();
-                name.Content = dp.FullName;
+                Label name = new Label
+                {
+                    Content = dp.FullName
+                };
                 Grid.SetColumn(name, 2);
                 Grid.SetRow(name, i);
                 name.BorderThickness = new Thickness(1);
                 name.BorderBrush = Brushes.Black;
                 grid1.Children.Add(name);
 
-                Label scount = new Label();
-                scount.Content = dp.NetStrokeCount;
+                Label scount = new Label
+                {
+                    Content = dp.NetStrokeCount
+                };
                 Grid.SetColumn(scount, 3);
                 Grid.SetRow(scount, i);
                 scount.BorderThickness = new Thickness(1);
                 scount.BorderBrush = Brushes.Black;
                 grid1.Children.Add(scount);
 
-                Label analysis = new Label();
-                analysis.Content = dp.Finished;
+                Label analysis = new Label
+                {
+                    Content = dp.Finished
+                };
                 if (dp.Finished.Equals("Yes"))
                 {
                     analysis.Background = Brushes.LightGreen;
@@ -141,8 +153,10 @@ namespace DPXManager
                 analysis.BorderBrush = Brushes.Black;
                 grid1.Children.Add(analysis);
 
-                Button buttonNum = new Button();
-                buttonNum.Content = "Show";
+                Button buttonNum = new Button
+                {
+                    Content = "Show"
+                };
                 Grid.SetColumn(buttonNum, 5);
                 Grid.SetRow(buttonNum, i);
                 buttonNum.AddHandler(Button.ClickEvent, new RoutedEventHandler(this.ShowPreview));
@@ -161,9 +175,11 @@ namespace DPXManager
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // Configure open file dialog box
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.DefaultExt = ".dyz"; // Default file extension
-            dlg.Filter = "DyKnow Files (.dyz)|*.dyz"; // Filter files by extension
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                DefaultExt = ".dyz", // Default file extension
+                Filter = "DyKnow Files (.dyz)|*.dyz" // Filter files by extension
+            };
 
             // Show open file dialog box
             Nullable<bool> result = dlg.ShowDialog();

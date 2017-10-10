@@ -267,8 +267,10 @@ namespace DPXAnswers
         private void ButtonOpen_Click(object sender, RoutedEventArgs e)
         {
             // Let the user choose which file to open
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Filter = "DyKnow files (*.dyz)|*.dyz";
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "DyKnow files (*.dyz)|*.dyz"
+            };
             if (openFileDialog.ShowDialog() == true)
             {
                 this.ButtonOpen.IsEnabled = false;
@@ -277,8 +279,10 @@ namespace DPXAnswers
                 // Open the DyKnow file
                 GC.Collect();
                 this.filename = openFileDialog.FileName;
-                Thread t = new Thread(new ThreadStart(this.LoadDyKnowFile));
-                t.Name = "OpenFileThread";
+                Thread t = new Thread(new ThreadStart(this.LoadDyKnowFile))
+                {
+                    Name = "OpenFileThread"
+                };
                 t.SetApartmentState(ApartmentState.STA);
                 t.Start();
             }
@@ -294,8 +298,10 @@ namespace DPXAnswers
             try
             {
                 // Let the user choose which file to open
-                Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
-                saveFileDialog.Filter = "CSV (*.csv)|*.csv";
+                Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog
+                {
+                    Filter = "CSV (*.csv)|*.csv"
+                };
                 if (saveFileDialog.ShowDialog() == true)
                 {
                     // Save the CSV file

@@ -200,10 +200,7 @@ namespace DPXAnswers
             this.processed = true;
 
             // Signal the event
-            if (this.DidProcess != null)
-            {
-                this.DidProcess();
-            }
+            this.DidProcess?.Invoke();
         }
     }
 }

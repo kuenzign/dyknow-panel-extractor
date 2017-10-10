@@ -117,11 +117,11 @@ namespace DPXReader
                     }
                     else if (this.xmlFile.Name.ToString() == "IMGS")
                     {
-                        this.ParseIMGS(this.xmlFile.ReadSubtree());
+                        this.ParseImages(this.xmlFile.ReadSubtree());
                     }
                     else if (this.xmlFile.Name.ToString() == "IMGD")
                     {
-                        this.ParseIMGD(this.xmlFile.ReadSubtree());
+                        this.ParseImageIDs(this.xmlFile.ReadSubtree());
                     }
                 }
             }
@@ -498,7 +498,7 @@ namespace DPXReader
         /// Parses the ImageIDs.
         /// </summary>
         /// <param name="subfile">The subfile.</param>
-        private void ParseIMGD(XmlReader subfile)
+        private void ParseImageIDs(XmlReader subfile)
         {
             int num = 0;
             while (subfile.Read())
@@ -601,7 +601,7 @@ namespace DPXReader
         /// Parses the Images.
         /// </summary>
         /// <param name="subfile">The pages to parse.</param>
-        private void ParseIMGS(XmlReader subfile)
+        private void ParseImages(XmlReader subfile)
         {
             while (subfile.Read())
             {

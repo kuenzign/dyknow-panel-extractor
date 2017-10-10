@@ -92,17 +92,21 @@ namespace DPXParserValidator
             this.workerQueue = new Queue<FileProcessRow>();
 
             // Add all of the known mistakes to the collection
-            this.knownMistakes = new List<KnownMistake>();
-            this.knownMistakes.Add(new KnownMistake(Operation.INSERT, "<ANIMLIST />\n"));
-            this.knownMistakes.Add(new KnownMistake(Operation.INSERT, " xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\""));
-            this.knownMistakes.Add(new KnownMistake(Operation.INSERT, "<TXTMODEMODXAML />\n<TXTMODEPARTXAML />\n"));
+            knownMistakes = new List<KnownMistake>
+            {
+                new KnownMistake(Operation.INSERT, "<ANIMLIST />\n"),
+                new KnownMistake(Operation.INSERT, " xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\""),
+                new KnownMistake(Operation.INSERT, "<TXTMODEMODXAML />\n<TXTMODEPARTXAML />\n")
+            };
 
             // Start all of the worker threads
             this.threadList = new List<Thread>();
             for (int i = 0; i < Environment.ProcessorCount; i++)
             {
-                Thread t = new Thread(new ThreadStart(this.Worker));
-                t.Name = "Queue Worker " + i;
+                Thread t = new Thread(new ThreadStart(Worker))
+                {
+                    Name = "Queue Worker " + i
+                };
                 t.Start();
                 this.threadList.Add(t);
             }
@@ -143,9 +147,11 @@ namespace DPXParserValidator
         private void ButtonSelectFiles_Click(object sender, RoutedEventArgs e)
         {
             // Let the user choose which file to open
-            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Filter = "DyKnow files (*.dyz)|*.dyz";
-            openFileDialog.Multiselect = true;
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "DyKnow files (*.dyz)|*.dyz",
+                Multiselect = true
+            };
             if (openFileDialog.ShowDialog() == true)
             {
                 string[] files = openFileDialog.FileNames;
@@ -160,26 +166,32 @@ namespace DPXParserValidator
                 for (int i = 0; i < files.Length; i++)
                 {
                     // Add the row definition
-                    RowDefinition rd = new RowDefinition();
-                    rd.Height = GridLength.Auto;
+                    RowDefinition rd = new RowDefinition
+                    {
+                        Height = GridLength.Auto
+                    };
                     this.GridResults.RowDefinitions.Add(rd);
 
                     // Add the file name
-                    Label num = new Label();
-                    num.Content = files[i];
-                    num.BorderBrush = Brushes.DarkGray;
-                    num.BorderThickness = new Thickness(1);
-                    num.Background = Brushes.White;
+                    Label num = new Label
+                    {
+                        Content = files[i],
+                        BorderBrush = Brushes.DarkGray,
+                        BorderThickness = new Thickness(1),
+                        Background = Brushes.White
+                    };
                     Grid.SetRow(num, this.currentRow);
                     Grid.SetColumn(num, 0);
                     this.GridResults.Children.Add(num);
 
                     // Add the progress
-                    Label progress = new Label();
-                    progress.Content = "Queued";
-                    progress.BorderBrush = Brushes.DarkGray;
-                    progress.BorderThickness = new Thickness(1);
-                    progress.Background = Brushes.LightGray;
+                    Label progress = new Label
+                    {
+                        Content = "Queued",
+                        BorderBrush = Brushes.DarkGray,
+                        BorderThickness = new Thickness(1),
+                        Background = Brushes.LightGray
+                    };
                     Grid.SetRow(progress, this.currentRow);
                     Grid.SetColumn(progress, 1);
                     this.GridResults.Children.Add(progress);
@@ -451,8 +463,10 @@ namespace DPXParserValidator
         /// <param name="e">Event arguments.</param>
         private void DisplayAboutWindow(object sender, RoutedEventArgs e)
         {
-            AboutDPX popupWindow = new AboutDPX();
-            popupWindow.Owner = this;
+            AboutDPX popupWindow = new AboutDPX
+            {
+                Owner = this
+            };
             popupWindow.ShowDialog();
         }
     }

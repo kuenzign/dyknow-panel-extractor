@@ -76,12 +76,14 @@ namespace DPXAnswers
             this.group.PropertyChanged += this.GradeRowPropertyChanged;
 
             // Add the panel index
-            this.index = new Label();
-            this.index.Content = "Box " + panel.Keys[i].Index;
-            this.index.FontWeight = FontWeights.Bold;
-            this.index.BorderBrush = Brushes.DarkGray;
-            this.index.BorderThickness = new Thickness(1);
-            this.index.Tag = this;
+            index = new Label
+            {
+                Content = "Box " + panel.Keys[i].Index,
+                FontWeight = FontWeights.Bold,
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1),
+                Tag = this
+            };
             this.index.MouseEnter += this.answerWindow.AnswerMouseEnter;
             this.index.MouseLeave += this.answerWindow.AnswerMouseLeave;
             Grid.SetRow(this.index, i);
@@ -89,26 +91,32 @@ namespace DPXAnswers
             g.Children.Add(this.index);
 
             // The image
-            this.thumb = new Border();
-            this.thumb.BorderBrush = Brushes.DarkGray;
-            this.thumb.BorderThickness = new Thickness(1);
+            this.thumb = new Border
+            {
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1)
+            };
             this.thumb.MouseEnter += this.answerWindow.AnswerMouseEnter;
             this.thumb.MouseLeave += this.answerWindow.AnswerMouseLeave;
             this.thumb.Tag = this;
-            Image img = new Image();
-            img.Source = this.boxAnalysis.Thumb.Source.Clone();
-            img.Width = 175;
+            Image img = new Image
+            {
+                Source = this.boxAnalysis.Thumb.Source.Clone(),
+                Width = 175
+            };
             this.thumb.Child = img;
             Grid.SetRow(this.thumb, i);
             Grid.SetColumn(this.thumb, 1);
             g.Children.Add(this.thumb);
 
             // Add the panel number
-            this.num = new Label();
-            this.num.Content = panel.GetRecognizedString(panel.Keys[i]);
-            this.num.BorderBrush = Brushes.DarkGray;
-            this.num.BorderThickness = new Thickness(1);
-            this.num.Tag = this;
+            this.num = new Label
+            {
+                Content = panel.GetRecognizedString(panel.Keys[i]),
+                BorderBrush = Brushes.DarkGray,
+                BorderThickness = new Thickness(1),
+                Tag = this
+            };
             this.num.MouseEnter += this.answerWindow.AnswerMouseEnter;
             this.num.MouseLeave += this.answerWindow.AnswerMouseLeave;
             Grid.SetRow(this.num, i);

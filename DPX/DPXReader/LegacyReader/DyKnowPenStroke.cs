@@ -48,15 +48,15 @@ namespace DPXReader
         /// Initializes a new instance of the <see cref="DyKnowPenStroke"/> class.
         /// </summary>
         /// <param name="ut">The ut value.</param>
-        /// <param name="pw">The pageWidth value.</param>
-        /// <param name="ph">The pageHeight value.</param>
+        /// <param name="pageWidth">The pageWidth value.</param>
+        /// <param name="pageHeight">The pageHeight value.</param>
         /// <param name="uid">The uid value.</param>
         /// <param name="data">The pages value.</param>
-        public DyKnowPenStroke(int ut, int pw, int ph, string uid, string data)
+        public DyKnowPenStroke(int ut, int pageWidth, int pageHeight, string uid, string data)
         {
             this.ut = ut;
-            this.pageWidth = pw;
-            this.pageHeight = ph;
+            this.pageWidth = pageWidth;
+            this.pageHeight = pageHeight;
             this.uid = uid;
             this.data = data;
             this.deleted = false;
