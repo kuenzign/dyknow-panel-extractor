@@ -109,7 +109,7 @@ namespace DPXSorter
                 }
                 else if (radioButtonUN.IsChecked == true)
                 {
-                    ps.SetSortByUsername();
+                    ps.SetSortByUserName();
                 }
 
                 ps.ProcessSort();

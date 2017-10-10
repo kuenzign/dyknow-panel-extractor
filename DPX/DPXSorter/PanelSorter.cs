@@ -47,7 +47,7 @@ namespace DPXSorter
         /// <summary>
         /// Sets sort by user name.
         /// </summary>
-        public void SetSortByUsername()
+        public void SetSortByUserName()
         {
             this.sorttype = false;
         }

@@ -46,14 +46,14 @@ namespace DPXReader.DyKnow
         private string cfsp;
 
         /// <summary>
-        /// The oner value;
+        /// The ownerUserName value;
         /// </summary>
-        private string oner;
+        private string ownerUserName;
 
         /// <summary>
-        /// The onern value.
+        /// The ownerFullName value.
         /// </summary>
-        private string onern;
+        private string ownerFullName;
 
         /// <summary>
         /// The animations list of objects.
@@ -168,25 +168,25 @@ namespace DPXReader.DyKnow
         }
 
         /// <summary>
-        /// Gets or sets the ONER.
+        /// Gets or sets the OwnerUserName.
         /// </summary>
-        /// <value>The ONER value.</value>
+        /// <value>The OwnerUserName value.</value>
         [XmlAttribute("ONER")]
-        public string ONER
+        public string OwnerUserName
         {
-            get { return this.oner; }
-            set { this.oner = value; }
+            get { return this.ownerUserName; }
+            set { this.ownerUserName = value; }
         }
 
         /// <summary>
-        /// Gets or sets the ONERN.
+        /// Gets or sets the OwnerFullName.
         /// </summary>
-        /// <value>The ONERN value.</value>
+        /// <value>The OwnerFullName value.</value>
         [XmlAttribute("ONERN")]
-        public string ONERN
+        public string OwnerFullName
         {
-            get { return this.onern; }
-            set { this.onern = value; }
+            get { return this.ownerFullName; }
+            set { this.ownerFullName = value; }
         }
 
         /// <summary>

@@ -86,13 +86,13 @@ namespace DPXGrader
             }
 
             // Add the new record to the results table
-            this.window.Dispatcher.Invoke(new PanelProcessorWindow.AddRowToResultsDelegate(this.window.AddRowToResults), DispatcherPriority.Input, this.num, page.ONERN, page.ONER, val, valDigit);
+            this.window.Dispatcher.Invoke(new PanelProcessorWindow.AddRowToResultsDelegate(this.window.AddRowToResults), DispatcherPriority.Input, this.num, page.OwnerFullName, page.OwnerUserName, val, valDigit);
 
             // Add the values to the results collection
             string[] record = new string[5];
             record[0] = (this.num + 1).ToString();
-            record[1] = page.ONERN;
-            record[2] = page.ONER;
+            record[1] = page.OwnerFullName;
+            record[2] = page.OwnerUserName;
             record[3] = val;
             record[4] = string.Empty + valDigit;
             int progressNumber = 0;

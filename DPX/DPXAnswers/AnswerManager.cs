@@ -229,8 +229,8 @@ namespace DPXAnswers
                 }
 
                 this.dyknow.Render(this.answerWindow.Inky, n);
-                string oner = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONER;
-                string onern = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONERN;
+                string oner = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).OwnerUserName;
+                string onern = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).OwnerFullName;
                 if (oner != null)
                 {
                     this.answerWindow.TextBoxStudentName.Text = onern;
@@ -515,7 +515,7 @@ namespace DPXAnswers
             foreach (KeyValuePair<int, PanelAnswer> pa in this.answers)
             {
                 DPXReader.DyKnow.Page p = this.dyknow.Pages[pa.Key] as DPXReader.DyKnow.Page;
-                sb.Append("\n" + (pa.Key + 1) + ",\"" + p.ONER + "\",\"" + p.ONERN + "\"");
+                sb.Append("\n" + (pa.Key + 1) + ",\"" + p.OwnerUserName + "\",\"" + p.OwnerFullName + "\"");
                 foreach (AnswerRect r in boxes)
                 {
                     BoxAnalysis ba = pa.Value.GetBoxAnalysis(r);

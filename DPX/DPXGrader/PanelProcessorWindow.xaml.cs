@@ -515,8 +515,8 @@ namespace DPXGrader
             {
                 this.selectedPanelId = n;
                 this.dyknow.Render(this.Inky, n);
-                string oner = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONER;
-                string onern = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).ONERN;
+                string oner = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).OwnerUserName;
+                string onern = (this.dyknow.Pages[n] as DPXReader.DyKnow.Page).OwnerFullName;
                 if (oner != null)
                 {
                     this.TextBoxStudentName.Text = onern;
