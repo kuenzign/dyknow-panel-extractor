@@ -2,9 +2,6 @@
 
 DPX is designed to read in DyKnow files that were collected using DyKnow Vision and use the information encoded in these files to analyze the submissions for grading purposes.
 
-| &lt;wiki:gadget url="http://www.ohloh.net/p/438702/widgets/project\_languages.xml" height="200" width="350" border="0"/&gt; | &lt;wiki:gadget url="http://www.ohloh.net/p/438702/widgets/project\_basic\_stats.xml" height="250" width="350" border="0"/&gt; |
-|:----------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
-
 ## Built Using
 
 * [.NET Framework 4.7](https://www.microsoft.com/en-us/download/details.aspx?id=55170&desc=dotnet47)
