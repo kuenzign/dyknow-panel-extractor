@@ -4,16 +4,11 @@
 // <summary>The row for the grade results.</summary>
 namespace DPXAnswers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
+    using ClusterLibraryCore;
+    using GradeLibrary;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
-    using ClusterLibraryCore;
-    using GradeLibrary;
 
     /// <summary>
     /// The row for the grade results.

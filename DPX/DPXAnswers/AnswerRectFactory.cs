@@ -4,10 +4,7 @@
 // <summary>The Answer Rectangle Factory.</summary>
 namespace DPXAnswers
 {
-    using System;
     using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Text;
     using System.Windows;
 
     /// <summary>

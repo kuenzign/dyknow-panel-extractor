@@ -4,17 +4,10 @@
 // <summary>The logic required to generate and display a thumbnail.</summary>
 namespace DPXGrader
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+    using DPXCommon;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Ink;
-    using System.Windows.Input;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using DPXCommon;
 
     /// <summary>
     /// The logic required to generate and display a thumbnail.

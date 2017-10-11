@@ -4,20 +4,11 @@
 // <summary>Window for importing a CSV roster file into the database.</summary>
 namespace DPXManager
 {
+    using DPXDatabase;
     using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
-    using System.Windows.Input;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Shapes;
-    using DPXDatabase;
 
     /// <summary>
     /// Window for importing CSV roster file into the database.

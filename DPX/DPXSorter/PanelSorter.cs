@@ -4,11 +4,9 @@
 // <summary>A parser that is able to sort the panels in a DyKnow file and produce a new file.</summary>
 namespace DPXSorter
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.IO.Compression;
-    using System.Linq;
     using System.Text;
     using System.Xml;
 

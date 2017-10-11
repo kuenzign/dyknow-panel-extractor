@@ -4,12 +4,12 @@
 // <summary>Performs the serialization / deserialization regression tests on a DyKnow file.</summary>
 namespace UnitTests
 {
+    using DPXReader.DyKnow;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Diagnostics;
     using System.IO;
     using System.IO.Compression;
-    using DPXReader.DyKnow;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
     /// This is a test class for DyKnowTest and is intended

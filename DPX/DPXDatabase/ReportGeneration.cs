@@ -4,10 +4,7 @@
 // <summary>Generates a report for a given set of dates.</summary>
 namespace DPXDatabase
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// Generates a report for a given set of dates.

@@ -4,14 +4,9 @@
 // <summary>The Answer Rectangle.</summary>
 namespace DPXAnswers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Windows;
     using ClusterLibraryCore;
     using GradeLibrary;
+    using System.Windows;
 
     /// <summary>
     /// The Answer Rectangle.

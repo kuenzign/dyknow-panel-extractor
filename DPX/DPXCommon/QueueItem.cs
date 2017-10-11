@@ -4,11 +4,6 @@
 // <summary>A queued object that is able to be processed.</summary>
 namespace DPXCommon
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
     /// <summary>
     /// A queued object that is able to be processed.
     /// </summary>

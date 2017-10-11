@@ -4,11 +4,6 @@
 // <summary>The main application for DyKnow Panel Sorter.</summary>
 namespace DPXSorter
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Data;
-    using System.Linq;
     using System.Windows;
 
     /// <summary>

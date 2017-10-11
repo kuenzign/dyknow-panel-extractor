@@ -4,10 +4,6 @@
 // <summary>Object for a Student as represented in the database.</summary>
 namespace DPXDatabase
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using DPXReader;
 
     /// <summary>

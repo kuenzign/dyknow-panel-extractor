@@ -4,13 +4,15 @@
 // <summary>The manager for processing the file and interpreting the answers.</summary>
 namespace DPXAnswers
 {
+    using DPXCommon;
+    using DPXReader.DyKnow;
+    using GradeLibrary;
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
     using System.Diagnostics;
     using System.IO;
-    using System.Linq;
     using System.Reflection;
     using System.Text;
     using System.Threading;
@@ -18,9 +20,6 @@ namespace DPXAnswers
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Threading;
-    using DPXCommon;
-    using DPXReader.DyKnow;
-    using GradeLibrary;
 
     /// <summary>
     /// The manager for processing the file and interpreting the answers.

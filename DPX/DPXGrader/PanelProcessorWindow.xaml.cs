@@ -4,26 +4,20 @@
 // <summary>The interface for processing panels and producing output.</summary>
 namespace DPXGrader
 {
+    using DPXCommon;
+    using DPXReader.DyKnow;
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
-    using System.Text;
     using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
     using System.Windows.Ink;
-    using System.Windows.Input;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Shapes;
     using System.Windows.Threading;
-    using DPXCommon;
-    using DPXReader.DyKnow;
 
     /// <summary>
     /// Interaction logic for PanelProcessorWindow.xaml

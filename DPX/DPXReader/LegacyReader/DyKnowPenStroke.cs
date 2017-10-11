@@ -4,11 +4,6 @@
 // <summary>A representation of a single pen stroke.</summary>
 namespace DPXReader
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
     /// <summary>
     /// A representation of a single pen stroke.
     /// </summary>

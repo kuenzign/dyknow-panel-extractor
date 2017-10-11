@@ -4,14 +4,10 @@
 // <summary>Singleton class used for accessing the database.</summary>
 namespace DPXManager
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Controls;
     using DPXDatabase;
     using DPXReader;
+    using System.Collections.Generic;
+    using System.Windows.Controls;
 
     /// <summary>
     /// Singleton class used for accessing the database.

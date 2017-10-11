@@ -4,10 +4,7 @@
 // <summary>Generate a report for a student.</summary>
 namespace DPXDatabase
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// Generate a report for a student.

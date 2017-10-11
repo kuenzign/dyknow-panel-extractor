@@ -4,18 +4,11 @@
 // <summary>The logic for generating a thumbnail.</summary>
 namespace DPXAnswers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Ink;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
     using DPXCommon;
     using DPXReader.DyKnow;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
 
     /// <summary>
     /// The logic for generating a thumbnail.

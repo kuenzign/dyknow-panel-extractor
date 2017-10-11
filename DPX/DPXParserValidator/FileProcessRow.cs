@@ -4,11 +4,6 @@
 // <summary>The record for a file that needs to be processed.</summary>
 namespace DPXParserValidator
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Threading;

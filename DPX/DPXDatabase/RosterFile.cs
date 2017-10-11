@@ -7,8 +7,6 @@ namespace DPXDatabase
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
-    using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// Reads in a class roster file to be parsed and added to the list of students.

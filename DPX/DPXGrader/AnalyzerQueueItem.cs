@@ -4,16 +4,11 @@
 // <summary>A queue item that needs to be processed.</summary>
 namespace DPXGrader
 {
-    using System;
-    using System.Diagnostics;
-    using System.Text;
+    using DPXCommon;
     using System.Threading;
-    using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Ink;
     using System.Windows.Threading;
-    using DPXCommon;
-    using DPXReader.DyKnow;
 
     /// <summary>
     /// A queue item that needs to be processed.

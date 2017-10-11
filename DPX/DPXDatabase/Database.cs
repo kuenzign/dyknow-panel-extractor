@@ -4,13 +4,10 @@
 // <summary>Manager for the database.</summary>
 namespace DPXDatabase
 {
+    using DPXReader;
     using System;
     using System.Collections.Generic;
     using System.Data.OleDb;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using DPXReader;
 
     /// <summary>
     /// Manager for the database.

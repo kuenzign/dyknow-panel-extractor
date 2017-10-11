@@ -7,7 +7,6 @@ namespace DPXReader.DyKnow
     using System;
     using System.Collections;
     using System.IO;
-    using System.Linq;
     using System.Text;
     using System.Windows.Documents;
     using System.Windows.Markup;

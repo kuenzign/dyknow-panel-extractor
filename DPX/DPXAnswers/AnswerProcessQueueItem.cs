@@ -4,17 +4,13 @@
 // <summary>The logic for processing the answer boxes.</summary>
 namespace DPXAnswers
 {
-    using System;
+    using DPXCommon;
+    using DPXReader.DyKnow;
     using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Text;
-    using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Ink;
     using System.Windows.Threading;
-    using DPXCommon;
-    using DPXReader.DyKnow;
 
     /// <summary>
     /// The logic for processing the answer boxes.

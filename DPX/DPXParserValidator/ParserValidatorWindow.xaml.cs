@@ -4,26 +4,19 @@
 // <summary>The main window for Parser Validator.</summary>
 namespace DPXParserValidator
 {
+    using DiffMatchPatch;
+    using DPXCommon;
+    using DPXReader.DyKnow;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.IO.Compression;
-    using System.Linq;
-    using System.Text;
     using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
-    using System.Windows.Input;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Shapes;
     using System.Windows.Threading;
-    using DiffMatchPatch;
-    using DPXCommon;
-    using DPXReader.DyKnow;
 
     /// <summary>
     /// Interaction logic for ParserValidatorWindow.xaml

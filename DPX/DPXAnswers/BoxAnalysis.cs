@@ -4,14 +4,9 @@
 // <summary>The analysis results of an answer box.</summary>
 namespace DPXAnswers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Controls;
     using GradeLibrary;
+    using System.Collections.ObjectModel;
+    using System.Windows.Controls;
 
     /// <summary>
     /// The analysis results of an answer box.

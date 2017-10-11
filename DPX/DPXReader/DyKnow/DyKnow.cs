@@ -8,8 +8,6 @@ namespace DPXReader.DyKnow
     using System.Collections;
     using System.IO;
     using System.IO.Compression;
-    using System.Linq;
-    using System.Text;
     using System.Windows.Controls;
     using System.Windows.Ink;
     using System.Windows.Media;
