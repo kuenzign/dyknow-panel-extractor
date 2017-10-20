@@ -14,14 +14,13 @@ namespace DPXAnswers
         /// <summary>
         /// The index of the panel.
         /// </summary>
-        private int index;
+        private readonly int index;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DisplayPanelEventArgs"/> class.
         /// </summary>
         /// <param name="index">The index.</param>
         public DisplayPanelEventArgs(int index)
-            : base()
         {
             this.index = index;
         }
