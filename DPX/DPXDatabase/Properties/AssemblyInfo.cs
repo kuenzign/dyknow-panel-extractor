@@ -1,7 +1,6 @@
 ﻿// <copyright file="AssemblyInfo.cs" company="University of Louisville Speed School of Engineering">
 // GNU General Public License v3
 // </copyright>
-// <summary>The AssemblyInfo file for the project.</summary>
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -23,7 +22,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7f28f465-8e0e-4604-a5ff-3de5a94cb8a8")]
+[assembly: Guid("0f06ad53-4893-4999-b94e-d896946ed5a1")]
 
 // Version information for an assembly consists of the following four values:
 //
